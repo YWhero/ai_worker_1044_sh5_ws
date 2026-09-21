@@ -1,0 +1,15 @@
+# Reuse the audited 1044 ROS runtime and rebuild the current Canvas/source.
+# A separate tag keeps the original 1044/hardware runtime available.
+ARG BASE_IMAGE=cyclo-1044-sh5/main:local-amd64
+FROM ${BASE_IMAGE} AS ui-builder
+WORKDIR /ui
+COPY src/cyclo_intelligence/orchestrator/ui/package.json src/cyclo_intelligence/orchestrator/ui/package-lock.json ./
+RUN npm ci --legacy-peer-deps
+COPY src/cyclo_intelligence/orchestrator/ui/ ./
+RUN npm run build
+
+FROM ${BASE_IMAGE}
+COPY --from=ui-builder /ui/build /usr/share/nginx/html
+COPY src/cyclo_intelligence/orchestrator /root/ros2_ws/src/cyclo_intelligence/orchestrator
+COPY src/cyclo_intelligence/shared /root/ros2_ws/src/cyclo_intelligence/shared
+RUN bash --noprofile --norc -c 'source /opt/ros/jazzy/setup.bash && source /root/ros2_ws/install/setup.bash && cd /root/ros2_ws && colcon build --symlink-install --packages-select shared orchestrator --allow-overriding shared orchestrator'

@@ -1,0 +1,17 @@
+/**:
+  controller_manager:
+    ros__parameters:
+      # Leader gripper commands can exceed the follower URDF range. Clamp all
+      # simulated command interfaces before gz_ros2_control applies them.
+      enforce_command_limits: true
+
+swerve_drive_controller:
+  ros__parameters:
+    # Gazebo steering must align before drive torque is applied.  Large
+    # tolerances produce a lateral impulse during turns and make the base slide.
+    steering_alignment_start_angle_error_threshold: 0.01
+    steering_alignment_angle_error_threshold: 0.1
+    # Keep the simulation deadband below Nav2's first acceleration-limited
+    # rotation command.  A 0.1 rad/s deadband can discard the braking command
+    # when the requested rotation direction reverses between waypoints.
+    angular_vel_deadband: 0.03

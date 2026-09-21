@@ -1,0 +1,154 @@
+#!/command/with-contenv bash
+# AI Worker Navigation - unified follower (Mapping/Navigation)
+
+set -e
+
+SERVICE_NAME="ai_worker_navigation"
+COMMON_SCRIPT="/usr/local/lib/s6-services/ros2_service_run.sh"
+NAVIGATION_TYPE_FILE="/run/navigation_type"
+MAP_DIR="/root/ros2_ws/src/ai_worker/ffw_navigation/maps"
+LAUNCH_ARGS_FILE="/run/launch_args/${SERVICE_NAME}"
+MAP_NAME="map"
+USE_SIM_TIME=""
+ROS_DOMAIN_ID_OVERRIDE=""
+RMW_IMPLEMENTATION_OVERRIDE=""
+
+sanitize_map_name() {
+  local raw="$1"
+  if [[ "${raw}" =~ ^[A-Za-z0-9_.-]+$ ]]; then
+    printf '%s' "${raw}"
+  else
+    echo "[${SERVICE_NAME}] Invalid map_name '${raw}', falling back to 'map'" >&2
+    printf '%s' "map"
+  fi
+}
+
+sanitize_boolean() {
+  local raw
+  raw=$(printf '%s' "$1" | tr '[:upper:]' '[:lower:]')
+  case "${raw}" in
+    true|1|yes|on)
+      printf '%s' "true"
+      ;;
+    false|0|no|off)
+      printf '%s' "false"
+      ;;
+    *)
+      echo "[${SERVICE_NAME}] Invalid boolean '$1', falling back to 'false'" >&2
+      printf '%s' "false"
+      ;;
+  esac
+}
+
+sanitize_ros_domain_id() {
+  local raw="$1"
+  if [[ "${raw}" =~ ^[0-9]+$ ]] && ((10#${raw} <= 232)); then
+    printf '%s' "$((10#${raw}))"
+    return 0
+  fi
+  echo "[${SERVICE_NAME}] Invalid ROS domain ID '${raw}'" >&2
+  return 1
+}
+
+sanitize_rmw_implementation() {
+  local raw="$1"
+  if [[ "${raw}" =~ ^rmw_[A-Za-z0-9_]+$ ]]; then
+    printf '%s' "${raw}"
+    return 0
+  fi
+  echo "[${SERVICE_NAME}] Invalid RMW implementation '${raw}'" >&2
+  return 1
+}
+
+detect_sim_time() {
+  local clock_info
+
+  # Real robots do not publish /clock. If an endpoint exists, require a real
+  # sample as well: a misconfigured ros_gz_bridge can advertise /clock without
+  # forwarding any data, which would otherwise create a mixed clock domain.
+  clock_info=$(timeout 5s bash -i -c 'ros2 topic info /clock' 2>/dev/null || true)
+  if ! printf '%s\n' "${clock_info}" | grep -Eq '^Publisher count: [1-9][0-9]*$'; then
+    printf '%s' "false"
+    return 0
+  fi
+
+  if timeout 8s bash -i -c \
+      'ros2 topic echo /clock --once >/dev/null 2>&1' >/dev/null 2>&1; then
+    printf '%s' "true"
+    return 0
+  fi
+
+  echo "[${SERVICE_NAME}] /clock is advertised but no sample was received." >&2
+  echo "[${SERVICE_NAME}] Refusing to start Nav2 with an ambiguous clock." >&2
+  return 1
+}
+
+if [ -f "${LAUNCH_ARGS_FILE}" ]; then
+  LAUNCH_ARGS=$(cat "${LAUNCH_ARGS_FILE}")
+  echo "[${SERVICE_NAME}] Launch args: ${LAUNCH_ARGS}"
+
+  for arg in ${LAUNCH_ARGS}; do
+    case "${arg}" in
+      map_name:=*)
+        MAP_NAME=$(sanitize_map_name "${arg#map_name:=}")
+        ;;
+      use_sim_time:=*)
+        USE_SIM_TIME=$(sanitize_boolean "${arg#use_sim_time:=}")
+        ;;
+      ros_domain_id:=*)
+        ROS_DOMAIN_ID_OVERRIDE=$(sanitize_ros_domain_id "${arg#ros_domain_id:=}") || exit 1
+        ;;
+      rmw_implementation:=*)
+        RMW_IMPLEMENTATION_OVERRIDE=$(sanitize_rmw_implementation "${arg#rmw_implementation:=}") || exit 1
+        ;;
+    esac
+  done
+fi
+
+if [ -n "${ROS_DOMAIN_ID_OVERRIDE}" ]; then
+  export ROS_DOMAIN_ID="${ROS_DOMAIN_ID_OVERRIDE}"
+fi
+if [ -n "${RMW_IMPLEMENTATION_OVERRIDE}" ]; then
+  export RMW_IMPLEMENTATION="${RMW_IMPLEMENTATION_OVERRIDE}"
+fi
+
+if [ -z "${USE_SIM_TIME}" ]; then
+  if ! USE_SIM_TIME=$(detect_sim_time); then
+    exit 1
+  fi
+  echo "[${SERVICE_NAME}] Auto-detected use_sim_time: ${USE_SIM_TIME}"
+fi
+
+if [ ! -f "${NAVIGATION_TYPE_FILE}" ]; then
+  echo "[${SERVICE_NAME}] Error: ${NAVIGATION_TYPE_FILE} not found. Set navigation type (map or nav) before starting." >&2
+  exit 1
+fi
+
+NAVIGATION_TYPE=$(cat "${NAVIGATION_TYPE_FILE}" | tr -d '[:space:]' | tr '[:upper:]' '[:lower:]')
+
+if [ "${NAVIGATION_TYPE}" = "map" ]; then
+  ROS2_COMMAND="ros2 launch ffw_navigation navigation.launch.py use_slam:=true use_sim_time:=${USE_SIM_TIME}"
+  
+elif [ "${NAVIGATION_TYPE}" = "nav" ]; then
+  MAP_PATH="${MAP_DIR}/${MAP_NAME}.yaml"
+  ROS2_COMMAND="ros2 launch ffw_navigation navigation.launch.py map:=${MAP_PATH} use_sim_time:=${USE_SIM_TIME}"
+else
+  echo "[${SERVICE_NAME}] Error: ${NAVIGATION_TYPE_FILE} must be 'map' or 'nav', got: ${NAVIGATION_TYPE}" >&2
+  exit 1
+fi
+
+if [ -f "${COMMON_SCRIPT}" ]; then
+  export SERVICE_NAME="${SERVICE_NAME}"
+  export ROS2_COMMAND="${ROS2_COMMAND}"
+  exec /command/with-contenv env \
+    ROS_DOMAIN_ID="${ROS_DOMAIN_ID}" \
+    RMW_IMPLEMENTATION="${RMW_IMPLEMENTATION}" \
+    SERVICE_NAME="${SERVICE_NAME}" \
+    ROS2_COMMAND="${ROS2_COMMAND}" \
+    LAUNCH_ARGS_HANDLED="true" \
+    ROS2_PRESERVE_ENV="true" \
+    bash --noprofile --norc -c "${COMMON_SCRIPT}"
+else
+  echo "Error: Common script not found at ${COMMON_SCRIPT}" >&2
+  exit 1
+fi

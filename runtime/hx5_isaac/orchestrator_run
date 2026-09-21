@@ -1,0 +1,5 @@
+#!/command/with-contenv bash
+set -e
+export SERVICE_NAME=orchestrator
+export ROS2_COMMAND='ros2 launch /hx5_isaac_runtime/orchestrator.launch.py'
+exec bash /usr/local/lib/s6-services/ros2_service_run.sh

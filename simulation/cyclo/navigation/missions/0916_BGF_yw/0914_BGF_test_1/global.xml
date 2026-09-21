@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4" main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <Sequence name="GlobalMission">
+      <MissionStep
+        name="Step_1_Waypoint_1"
+        waypoint_id="Waypoint_1_63d0b28e"
+        label="Waypoint 1"
+        local_bt="locals/waypoint_1/main.xml"
+        x="1.226379"
+        y="0.184284"
+        yaw="-0.074912"/>
+      <MissionStep
+        name="Step_2_Waypoint_2"
+        waypoint_id="Waypoint_2_9b20cb71"
+        label="Waypoint 2"
+        local_bt="locals/waypoint_2/main.xml"
+        x="0.282364"
+        y="1.405273"
+        yaw="1.619937"/>
+      <MissionStep
+        name="Step_3_Waypoint_3"
+        waypoint_id="Waypoint_3_31e44268"
+        label="Waypoint 3"
+        local_bt="locals/waypoint_3/main.xml"
+        x="-0.313273"
+        y="-0.087091"
+        yaw="-1.015801"/>
+      <MissionStep
+        name="Step_4_Waypoint_1"
+        waypoint_id="Waypoint_1_63d0b28e"
+        label="Waypoint 1"
+        local_bt="locals/waypoint_1/main.xml"
+        x="1.226379"
+        y="0.184284"
+        yaw="-0.074912"/>
+    </Sequence>
+  </BehaviorTree>
+</root>

@@ -1,0 +1,35 @@
+{
+  "0": {
+    "name": "Simulation Open",
+    "description": "Open all fingers",
+    "curls": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "1": {
+    "name": "Simulation Power Grasp",
+    "description": "Simulation-only generic curl",
+    "curls": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "2": {
+    "name": "Simulation Pinch",
+    "description": "Thumb/index curl",
+    "curls": [
+      1.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+}

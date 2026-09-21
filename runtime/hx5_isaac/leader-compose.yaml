@@ -1,0 +1,27 @@
+name: cyclo_1044_hx5_isaac_leader
+services:
+  leader:
+    image: cyclo-1044-sh5/ai-worker-hx5-sim:local-amd64
+    container_name: lg2_leader_1044_hx5_isaac
+    entrypoint: /bin/bash
+    command:
+      - --noprofile
+      - --norc
+      - -c
+      - 'set -e; source /opt/ros/jazzy/setup.bash; source /root/ros2_ws/install/setup.bash; exec ros2 launch ffw_bringup ffw_lg2_leader_ai.launch.py'
+    network_mode: host
+    ipc: private
+    environment:
+      ROS_DOMAIN_ID: '115'
+      RMW_IMPLEMENTATION: rmw_zenoh_cpp
+      ZENOH_CONFIG_OVERRIDE: 'mode="client";connect/endpoints=["tcp/127.0.0.1:7855"];scouting/multicast/enabled=false;transport/shared_memory/enabled=false'
+    devices:
+      - ${HX5_ISAAC_LEFT_LEADER_DEVICE:-/dev/left_leader}:/dev/left_leader
+      - ${HX5_ISAAC_RIGHT_LEADER_DEVICE:-/dev/right_leader}:/dev/right_leader
+    volumes:
+      - ${HX5_ISAAC_ROOT:-../..}/src/ai_worker:/root/ros2_ws/src/ai_worker:ro
+      # Override only this container's official controller configuration.
+      - ${HX5_ISAAC_ROOT:-../..}/simulation/isaac/leader/hardware.yaml:/root/ros2_ws/install/ffw_bringup/share/ffw_bringup/config/ffw_lg2_leader/ffw_lg2_leader_ai_hardware_controller.yaml:ro
+    stop_signal: SIGINT
+    stop_grace_period: 20s
+    restart: 'no'

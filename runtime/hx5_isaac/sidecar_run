@@ -1,0 +1,5 @@
+#!/command/with-contenv bash
+set -eo pipefail
+source /opt/ros/jazzy/setup.bash
+source /root/ros2_ws/install/setup.bash
+exec python3 /hx5_isaac_runtime/ros_processes.py

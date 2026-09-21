@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:include filename="$(find ffw_description)/ros2_control/$(arg model)/ffw_sh5_follower.joints.xacro" />
+  <xacro:include filename="$(find robotis_hand_description)/ros2_control/hx5_d20_rev2/hx5_d20_left.joints.xacro" />
+  <xacro:include filename="$(find robotis_hand_description)/ros2_control/hx5_d20_rev2/hx5_d20_right.joints.xacro" />
+
+  <xacro:macro name="ffw_sh5_follower_system" params="use_sim:=^|false use_mock_hardware:=^|false mock_sensor_commands:=^|false">
+    <ros2_control name="ffw_sh5_follower" type="system" is_async="true">
+      <xacro:if value="${use_sim}">
+        <hardware>
+          <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+        </hardware>
+      </xacro:if>
+      <xacro:unless value="${use_sim}">
+        <hardware>
+          <xacro:if value="${use_mock_hardware}">
+            <plugin>mock_components/GenericSystem</plugin>
+            <param name="mock_sensor_commands">${mock_sensor_commands}</param>
+            <param name="state_following_offset">0.0</param>
+          </xacro:if>
+          <xacro:unless value="${use_mock_hardware}">
+            <plugin>dynamixel_hardware_interface/DynamixelHardware</plugin>
+            <param name="port_name">/dev/follower</param>
+            <param name="baud_rate">4000000</param>
+            <param name="dynamixel_model_folder">/param/dxl_model</param>
+            <param name="number_of_joints">60</param>
+            <param name="number_of_transmissions">60</param>
+            <param name="disable_torque_at_init">true</param>
+            <param name="dynamixel_state_pub_msg_name">ffw_follower/dxl_state</param>
+            <param name="get_dynamixel_data_srv_name">ffw_follower/get_dxl_data</param>
+            <param name="set_dynamixel_data_srv_name">ffw_follower/set_dxl_data</param>
+            <param name="reboot_dxl_srv_name">ffw_follower/reboot_dxl</param>
+            <param name="set_dxl_torque_srv_name">dynamixel_hardware_interface/set_dxl_torque</param>
+          </xacro:unless>
+        </hardware>
+      </xacro:unless>
+
+      <xacro:ffw_sh5_follower_joints/>
+      <xacro:hx5_right_joints/>
+      <xacro:hx5_left_joints/>
+
+    </ros2_control>
+  </xacro:macro>
+</robot>

@@ -1,0 +1,124 @@
+{
+  "global_bt": "global.xml",
+  "map_name": "0916_BGF_yw",
+  "metadata": {
+    "behavior_node_count": 0,
+    "mission_flow": {
+      "edges": [
+        {
+          "id": "mission_flow_Waypoint_1_63d0b28e_Waypoint_2_9b20cb71",
+          "source": "Waypoint_1_63d0b28e",
+          "target": "Waypoint_2_9b20cb71"
+        },
+        {
+          "id": "mission_flow_Waypoint_2_9b20cb71_Waypoint_3_31e44268",
+          "source": "Waypoint_2_9b20cb71",
+          "target": "Waypoint_3_31e44268"
+        },
+        {
+          "id": "mission_flow_Waypoint_3_31e44268_Waypoint_1_63d0b28e",
+          "source": "Waypoint_3_31e44268",
+          "target": "Waypoint_1_63d0b28e"
+        }
+      ],
+      "nodes": [
+        {
+          "id": "Waypoint_1_63d0b28e",
+          "position": {
+            "x": 300,
+            "y": 72
+          }
+        },
+        {
+          "id": "Waypoint_2_9b20cb71",
+          "position": {
+            "x": 520,
+            "y": 72
+          }
+        },
+        {
+          "id": "Waypoint_3_31e44268",
+          "position": {
+            "x": 740,
+            "y": 72
+          }
+        }
+      ]
+    },
+    "source": "mission_canvas"
+  },
+  "mission_name": "0914_BGF_test_1",
+  "revision": 20,
+  "schema_version": 2,
+  "waypoints": [
+    {
+      "id": "Waypoint_1_63d0b28e",
+      "label": "Waypoint 1",
+      "local_bt": "locals/waypoint_1/main.xml",
+      "local_bt_files": [
+        "locals/waypoint_1/main.xml"
+      ],
+      "metadata": {
+        "coordinate_space": "map",
+        "linked_bt_tree": "locals/waypoint_1/main.xml",
+        "local_bt": "locals/waypoint_1/main.xml",
+        "local_bt_files": [
+          "locals/waypoint_1/main.xml"
+        ],
+        "source": "mission_canvas"
+      },
+      "pose": {
+        "frame_id": "map",
+        "x": 1.226379479261067,
+        "y": 0.18428396044495374,
+        "yaw": -0.07491231900740057
+      }
+    },
+    {
+      "id": "Waypoint_2_9b20cb71",
+      "label": "Waypoint 2",
+      "local_bt": "locals/waypoint_2/main.xml",
+      "local_bt_files": [
+        "locals/waypoint_2/main.xml"
+      ],
+      "metadata": {
+        "coordinate_space": "map",
+        "linked_bt_tree": "locals/waypoint_2/main.xml",
+        "local_bt": "locals/waypoint_2/main.xml",
+        "local_bt_files": [
+          "locals/waypoint_2/main.xml"
+        ],
+        "source": "mission_canvas"
+      },
+      "pose": {
+        "frame_id": "map",
+        "x": 0.28236363636363476,
+        "y": 1.4052727272727255,
+        "yaw": 1.6199370612109119
+      }
+    },
+    {
+      "id": "Waypoint_3_31e44268",
+      "label": "Waypoint 3",
+      "local_bt": "locals/waypoint_3/main.xml",
+      "local_bt_files": [
+        "locals/waypoint_3/main.xml"
+      ],
+      "metadata": {
+        "coordinate_space": "map",
+        "linked_bt_tree": "locals/waypoint_3/main.xml",
+        "local_bt": "locals/waypoint_3/main.xml",
+        "local_bt_files": [
+          "locals/waypoint_3/main.xml"
+        ],
+        "source": "mission_canvas"
+      },
+      "pose": {
+        "frame_id": "map",
+        "x": -0.3132727272727239,
+        "y": -0.08709090909090611,
+        "yaw": -1.015800599456315
+      }
+    }
+  ]
+}

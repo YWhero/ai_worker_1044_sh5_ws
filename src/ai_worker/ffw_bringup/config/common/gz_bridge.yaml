@@ -1,0 +1,108 @@
+- ros_topic_name: "clock"
+  gz_topic_name: "clock"
+  ros_type_name: "rosgraph_msgs/msg/Clock"
+  gz_type_name: "gz.msgs.Clock"
+  direction: "GZ_TO_ROS"
+
+- ros_topic_name: "scan_left"
+  gz_topic_name: "scan_left"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: "GZ_TO_ROS"
+
+- ros_topic_name: "scan_right"
+  gz_topic_name: "scan_right"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: "GZ_TO_ROS"
+
+- ros_topic_name: "zed/left/camera_info"
+  gz_topic_name: "zed/left/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: "GZ_TO_ROS"
+  lazy: true
+  qos_profile: "SENSOR_DATA"
+  frame_id: "zedm_left_camera_optical_frame"
+
+- ros_topic_name: "zed/left/image_raw"
+  gz_topic_name: "zed/left/image_raw"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: "GZ_TO_ROS"
+  lazy: true
+  qos_profile: "SENSOR_DATA"
+  frame_id: "zedm_left_camera_optical_frame"
+
+- ros_topic_name: "camera_left/color/camera_info"
+  gz_topic_name: "camera_left/color/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: "GZ_TO_ROS"
+  lazy: true
+  qos_profile: "SENSOR_DATA"
+  frame_id: "camera_l_link"
+
+- ros_topic_name: "camera_left/color/image_raw"
+  gz_topic_name: "camera_left/color/image_raw"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: "GZ_TO_ROS"
+  lazy: true
+  qos_profile: "SENSOR_DATA"
+  frame_id: "camera_l_link"
+
+- ros_topic_name: "camera_right/color/camera_info"
+  gz_topic_name: "camera_right/color/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: "GZ_TO_ROS"
+  lazy: true
+  qos_profile: "SENSOR_DATA"
+  frame_id: "camera_r_link"
+
+- ros_topic_name: "camera_right/color/image_raw"
+  gz_topic_name: "camera_right/color/image_raw"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: "GZ_TO_ROS"
+  lazy: true
+  qos_profile: "SENSOR_DATA"
+  frame_id: "camera_r_link"
+
+# Compatibility CameraInfo topics used by cyclo_data and the physical camera UI.
+- ros_topic_name: "zed/zed_node/left/camera_info"
+  gz_topic_name: "zed/left/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: "GZ_TO_ROS"
+  lazy: true
+  qos_profile: "SENSOR_DATA"
+  frame_id: "zedm_left_camera_optical_frame"
+
+- ros_topic_name: "zed/zed_node/right/camera_info"
+  gz_topic_name: "zed/left/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: "GZ_TO_ROS"
+  lazy: true
+  qos_profile: "SENSOR_DATA"
+  frame_id: "zedm_right_camera_optical_frame"
+
+- ros_topic_name: "camera_left/camera_left/color/camera_info"
+  gz_topic_name: "camera_left/color/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: "GZ_TO_ROS"
+  lazy: true
+  qos_profile: "SENSOR_DATA"
+  frame_id: "camera_l_link"
+
+- ros_topic_name: "camera_right/camera_right/color/camera_info"
+  gz_topic_name: "camera_right/color/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: "GZ_TO_ROS"
+  lazy: true
+  qos_profile: "SENSOR_DATA"
+  frame_id: "camera_r_link"

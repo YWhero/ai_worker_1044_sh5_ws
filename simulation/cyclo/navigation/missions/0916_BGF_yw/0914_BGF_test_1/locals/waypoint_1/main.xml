@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4" main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <Sequence name="Sequence_1">
+      <JointControl name="JointControl_1"
+        enable_head="true"
+        head_positions="0.05, 0.0"
+        enable_arms="false"
+        left_joint_names="arm_l_joint1, arm_l_joint2, arm_l_joint3, arm_l_joint4, arm_l_joint5, arm_l_joint6, arm_l_joint7"
+        left_positions="0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0"
+        right_joint_names="arm_r_joint1, arm_r_joint2, arm_r_joint3, arm_r_joint4, arm_r_joint5, arm_r_joint6, arm_r_joint7"
+        right_positions="0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0"
+        enable_lift="false"
+        lift_position="0"
+        duration="2.0"/>
+      <Rotate name="Rotate_1" angle_deg="90.0"/>
+      <Wait name="Wait_1" duration="5.0"/>
+    </Sequence>
+  </BehaviorTree>
+  <BehaviorTree ID="__pending__1">
+    <ArmStateGate name="ArmStateGate_1"
+      left_target_joints=""
+      left_target_positions=""
+      right_target_joints=""
+      right_target_positions=""
+      joint_threshold="0.01"
+      detect_left_gripper="false"
+      detect_right_gripper="false"
+      left_gripper_joint="gripper_l_joint1"
+      right_gripper_joint="gripper_r_joint1"
+      gripper_closed_value="1.0"
+      gripper_open_value="0.0"
+      gripper_threshold="0.05"
+      timeout_sec="0.0"/>
+  </BehaviorTree>
+</root>

@@ -1,0 +1,5 @@
+#!/command/with-contenv bash
+set -e
+export SERVICE_NAME=cyclo_data
+export ROS2_COMMAND='ros2 run cyclo_data cyclo_data_node --ros-args -p use_sim_time:=true'
+exec bash /usr/local/lib/s6-services/ros2_service_run.sh

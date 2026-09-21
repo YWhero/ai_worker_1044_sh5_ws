@@ -1,0 +1,11 @@
+**
+!src
+!src/cyclo_intelligence
+!src/cyclo_intelligence/orchestrator
+!src/cyclo_intelligence/orchestrator/**
+!src/cyclo_intelligence/shared
+!src/cyclo_intelligence/shared/**
+**/node_modules
+**/build
+**/__pycache__
+**/.git

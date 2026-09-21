@@ -1,0 +1,17 @@
+# Isolated HX5 simulation upgrade for RTX50/Blackwell GPUs.
+# Build context: cyclo_brain/; build the ordinary ViTacFormer image first.
+ARG BASE_IMAGE=cyclo-1044-sh5/vitacformer:local-amd64
+FROM ${BASE_IMAGE}
+ARG TORCH_VERSION=2.7.1
+ARG TORCHVISION_VERSION=0.22.1
+ARG TORCHAUDIO_VERSION=2.7.1
+ARG PYTORCH_INDEX_URL=https://download.pytorch.org/whl/cu128
+
+# Matched official CUDA12.8 wheels provide native sm_120/RTX5090 support.
+RUN PIP_CONFIG_FILE=/dev/null PIP_EXTRA_INDEX_URL= pip install --no-cache-dir --upgrade \
+      torch==${TORCH_VERSION} torchvision==${TORCHVISION_VERSION} \
+      torchaudio==${TORCHAUDIO_VERSION} --index-url ${PYTORCH_INDEX_URL}
+COPY policy/vitacformer/vitacformer_engine/ /app/vitacformer_engine/
+RUN python3 -c "import torch,torchvision; print(torch.__version__,torchvision.__version__,torch.version.cuda); assert torch.version.cuda == '12.8'"
+
+LABEL org.opencontainers.image.description="SH5 HX5 simulation ViTacFormer with Blackwell-compatible PyTorch CUDA12.8 and reviewed Pour loader"

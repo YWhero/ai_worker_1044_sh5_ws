@@ -1,0 +1,18 @@
+<class_libraries>
+  <library path="sim_time_navigators">
+    <class
+      type="ffw_navigation::SimTimeNavigateToPoseNavigator"
+      base_class_type="nav2_core::NavigatorBase">
+      <description>
+        NavigateToPose navigator that normalizes goal timestamps for simulation time.
+      </description>
+    </class>
+    <class
+      type="ffw_navigation::SimTimeNavigateThroughPosesNavigator"
+      base_class_type="nav2_core::NavigatorBase">
+      <description>
+        NavigateThroughPoses navigator that normalizes goal timestamps for simulation time.
+      </description>
+    </class>
+  </library>
+</class_libraries>

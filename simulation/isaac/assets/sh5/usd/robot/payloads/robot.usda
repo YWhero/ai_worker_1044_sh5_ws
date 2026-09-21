@@ -1,0 +1,892 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.2"
+    }
+    defaultPrim = "ffw_sh5_follower"
+    endTimeCode = 1000000
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    startTimeCode = 0
+    upAxis = "Z"
+)
+
+over "ffw_sh5_follower" (
+    prepend apiSchemas = ["IsaacRobotAPI"]
+)
+{
+    prepend rel isaac:physics:robotJoints = [
+        </ffw_sh5_follower/Physics/lift_joint>,
+        </ffw_sh5_follower/Physics/left_wheel_steer>,
+        </ffw_sh5_follower/Physics/right_wheel_steer>,
+        </ffw_sh5_follower/Physics/rear_wheel_steer>,
+        </ffw_sh5_follower/Physics/head_joint1>,
+        </ffw_sh5_follower/Physics/arm_l_joint1>,
+        </ffw_sh5_follower/Physics/arm_r_joint1>,
+        </ffw_sh5_follower/Physics/head_joint2>,
+        </ffw_sh5_follower/Physics/arm_l_joint2>,
+        </ffw_sh5_follower/Physics/arm_l_joint3>,
+        </ffw_sh5_follower/Physics/arm_l_joint4>,
+        </ffw_sh5_follower/Physics/arm_l_joint5>,
+        </ffw_sh5_follower/Physics/arm_l_joint6>,
+        </ffw_sh5_follower/Physics/arm_l_joint7>,
+        </ffw_sh5_follower/Physics/finger_l_joint1>,
+        </ffw_sh5_follower/Physics/finger_l_joint5>,
+        </ffw_sh5_follower/Physics/finger_l_joint9>,
+        </ffw_sh5_follower/Physics/finger_l_joint13>,
+        </ffw_sh5_follower/Physics/finger_l_joint17>,
+        </ffw_sh5_follower/Physics/finger_l_joint2>,
+        </ffw_sh5_follower/Physics/finger_l_joint3>,
+        </ffw_sh5_follower/Physics/finger_l_joint4>,
+        </ffw_sh5_follower/Physics/finger_l_joint6>,
+        </ffw_sh5_follower/Physics/finger_l_joint7>,
+        </ffw_sh5_follower/Physics/finger_l_joint8>,
+        </ffw_sh5_follower/Physics/finger_l_joint10>,
+        </ffw_sh5_follower/Physics/finger_l_joint11>,
+        </ffw_sh5_follower/Physics/finger_l_joint12>,
+        </ffw_sh5_follower/Physics/finger_l_joint14>,
+        </ffw_sh5_follower/Physics/finger_l_joint15>,
+        </ffw_sh5_follower/Physics/finger_l_joint16>,
+        </ffw_sh5_follower/Physics/finger_l_joint18>,
+        </ffw_sh5_follower/Physics/finger_l_joint19>,
+        </ffw_sh5_follower/Physics/finger_l_joint20>,
+        </ffw_sh5_follower/Physics/arm_r_joint2>,
+        </ffw_sh5_follower/Physics/arm_r_joint3>,
+        </ffw_sh5_follower/Physics/arm_r_joint4>,
+        </ffw_sh5_follower/Physics/arm_r_joint5>,
+        </ffw_sh5_follower/Physics/arm_r_joint6>,
+        </ffw_sh5_follower/Physics/arm_r_joint7>,
+        </ffw_sh5_follower/Physics/finger_r_joint1>,
+        </ffw_sh5_follower/Physics/finger_r_joint5>,
+        </ffw_sh5_follower/Physics/finger_r_joint9>,
+        </ffw_sh5_follower/Physics/finger_r_joint13>,
+        </ffw_sh5_follower/Physics/finger_r_joint17>,
+        </ffw_sh5_follower/Physics/finger_r_joint2>,
+        </ffw_sh5_follower/Physics/finger_r_joint3>,
+        </ffw_sh5_follower/Physics/finger_r_joint4>,
+        </ffw_sh5_follower/Physics/finger_r_joint6>,
+        </ffw_sh5_follower/Physics/finger_r_joint7>,
+        </ffw_sh5_follower/Physics/finger_r_joint8>,
+        </ffw_sh5_follower/Physics/finger_r_joint10>,
+        </ffw_sh5_follower/Physics/finger_r_joint11>,
+        </ffw_sh5_follower/Physics/finger_r_joint12>,
+        </ffw_sh5_follower/Physics/finger_r_joint14>,
+        </ffw_sh5_follower/Physics/finger_r_joint15>,
+        </ffw_sh5_follower/Physics/finger_r_joint16>,
+        </ffw_sh5_follower/Physics/finger_r_joint18>,
+        </ffw_sh5_follower/Physics/finger_r_joint19>,
+        </ffw_sh5_follower/Physics/finger_r_joint20>,
+        </ffw_sh5_follower/Physics/left_wheel_drive>,
+        </ffw_sh5_follower/Physics/right_wheel_drive>,
+        </ffw_sh5_follower/Physics/rear_wheel_drive>,
+    ]
+    prepend rel isaac:physics:robotLinks = [
+        </ffw_sh5_follower/Geometry/base_link>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/head_link1>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/head_link1/head_link2>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link1>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link1/finger_l_link2>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link1/finger_l_link2/finger_l_link3>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link1/finger_l_link2/finger_l_link3/finger_l_link4>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link5>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link5/finger_l_link6>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link5/finger_l_link6/finger_l_link7>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link5/finger_l_link6/finger_l_link7/finger_l_link8>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link9>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link9/finger_l_link10>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link9/finger_l_link10/finger_l_link11>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link9/finger_l_link10/finger_l_link11/finger_l_link12>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link13>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link13/finger_l_link14>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link13/finger_l_link14/finger_l_link15>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link13/finger_l_link14/finger_l_link15/finger_l_link16>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link17>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link17/finger_l_link18>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link17/finger_l_link18/finger_l_link19>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link17/finger_l_link18/finger_l_link19/finger_l_link20>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link1>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link1/finger_r_link2>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link1/finger_r_link2/finger_r_link3>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link1/finger_r_link2/finger_r_link3/finger_r_link4>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link5>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link5/finger_r_link6>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link5/finger_r_link6/finger_r_link7>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link5/finger_r_link6/finger_r_link7/finger_r_link8>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link9>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link9/finger_r_link10>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link9/finger_r_link10/finger_r_link11>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link9/finger_r_link10/finger_r_link11/finger_r_link12>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link13>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link13/finger_r_link14>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link13/finger_r_link14/finger_r_link15>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link13/finger_r_link14/finger_r_link15/finger_r_link16>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link17>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link17/finger_r_link18>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link17/finger_r_link18/finger_r_link19>,
+        </ffw_sh5_follower/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link17/finger_r_link18/finger_r_link19/finger_r_link20>,
+        </ffw_sh5_follower/Geometry/base_link/left_wheel_steer_link>,
+        </ffw_sh5_follower/Geometry/base_link/left_wheel_steer_link/left_wheel_drive_link>,
+        </ffw_sh5_follower/Geometry/base_link/right_wheel_steer_link>,
+        </ffw_sh5_follower/Geometry/base_link/right_wheel_steer_link/right_wheel_drive_link>,
+        </ffw_sh5_follower/Geometry/base_link/rear_wheel_steer_link>,
+        </ffw_sh5_follower/Geometry/base_link/rear_wheel_steer_link/rear_wheel_drive_link>,
+    ]
+    token isaac:robotType = "Mobile Manipulators"
+
+    over "Geometry"
+    {
+        over "base_link" (
+            prepend apiSchemas = ["IsaacLinkAPI"]
+        )
+        {
+            over "arm_base_link" (
+                prepend apiSchemas = ["IsaacLinkAPI"]
+            )
+            {
+                over "head_link1" (
+                    prepend apiSchemas = ["IsaacLinkAPI"]
+                )
+                {
+                    over "head_link2" (
+                        prepend apiSchemas = ["IsaacLinkAPI"]
+                    )
+                    {
+                        over "zedm" (
+                            prepend apiSchemas = ["IsaacSiteAPI"]
+                        )
+                        {
+                        }
+
+                        over "zedm_1" (
+                            prepend apiSchemas = ["IsaacSiteAPI"]
+                        )
+                        {
+                        }
+                    }
+                }
+
+                over "arm_l_link1" (
+                    prepend apiSchemas = ["IsaacLinkAPI"]
+                )
+                {
+                    over "arm_l_link2" (
+                        prepend apiSchemas = ["IsaacLinkAPI"]
+                    )
+                    {
+                        over "arm_l_link3" (
+                            prepend apiSchemas = ["IsaacLinkAPI"]
+                        )
+                        {
+                            over "arm_l_link4" (
+                                prepend apiSchemas = ["IsaacLinkAPI"]
+                            )
+                            {
+                                over "arm_l_link5" (
+                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                )
+                                {
+                                    over "arm_l_link6" (
+                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                    )
+                                    {
+                                        over "arm_l_link7" (
+                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                        )
+                                        {
+                                            over "d405" (
+                                                prepend apiSchemas = ["IsaacSiteAPI"]
+                                            )
+                                            {
+                                            }
+
+                                            over "finger_l_link1" (
+                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                            )
+                                            {
+                                                over "finger_l_link2" (
+                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                )
+                                                {
+                                                    over "finger_l_link3" (
+                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                    )
+                                                    {
+                                                        over "finger_l_link4" (
+                                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                                        )
+                                                        {
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            over "finger_l_link5" (
+                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                            )
+                                            {
+                                                over "finger_l_link6" (
+                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                )
+                                                {
+                                                    over "finger_l_link7" (
+                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                    )
+                                                    {
+                                                        over "finger_l_link8" (
+                                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                                        )
+                                                        {
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            over "finger_l_link9" (
+                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                            )
+                                            {
+                                                over "finger_l_link10" (
+                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                )
+                                                {
+                                                    over "finger_l_link11" (
+                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                    )
+                                                    {
+                                                        over "finger_l_link12" (
+                                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                                        )
+                                                        {
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            over "finger_l_link13" (
+                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                            )
+                                            {
+                                                over "finger_l_link14" (
+                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                )
+                                                {
+                                                    over "finger_l_link15" (
+                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                    )
+                                                    {
+                                                        over "finger_l_link16" (
+                                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                                        )
+                                                        {
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            over "finger_l_link17" (
+                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                            )
+                                            {
+                                                over "finger_l_link18" (
+                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                )
+                                                {
+                                                    over "finger_l_link19" (
+                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                    )
+                                                    {
+                                                        over "finger_l_link20" (
+                                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                                        )
+                                                        {
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                over "arm_r_link1" (
+                    prepend apiSchemas = ["IsaacLinkAPI"]
+                )
+                {
+                    over "arm_r_link2" (
+                        prepend apiSchemas = ["IsaacLinkAPI"]
+                    )
+                    {
+                        over "arm_r_link3" (
+                            prepend apiSchemas = ["IsaacLinkAPI"]
+                        )
+                        {
+                            over "arm_r_link4" (
+                                prepend apiSchemas = ["IsaacLinkAPI"]
+                            )
+                            {
+                                over "arm_r_link5" (
+                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                )
+                                {
+                                    over "arm_r_link6" (
+                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                    )
+                                    {
+                                        over "arm_r_link7" (
+                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                        )
+                                        {
+                                            over "d405" (
+                                                prepend apiSchemas = ["IsaacSiteAPI"]
+                                            )
+                                            {
+                                            }
+
+                                            over "finger_r_link1" (
+                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                            )
+                                            {
+                                                over "finger_r_link2" (
+                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                )
+                                                {
+                                                    over "finger_r_link3" (
+                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                    )
+                                                    {
+                                                        over "finger_r_link4" (
+                                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                                        )
+                                                        {
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            over "finger_r_link5" (
+                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                            )
+                                            {
+                                                over "finger_r_link6" (
+                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                )
+                                                {
+                                                    over "finger_r_link7" (
+                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                    )
+                                                    {
+                                                        over "finger_r_link8" (
+                                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                                        )
+                                                        {
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            over "finger_r_link9" (
+                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                            )
+                                            {
+                                                over "finger_r_link10" (
+                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                )
+                                                {
+                                                    over "finger_r_link11" (
+                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                    )
+                                                    {
+                                                        over "finger_r_link12" (
+                                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                                        )
+                                                        {
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            over "finger_r_link13" (
+                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                            )
+                                            {
+                                                over "finger_r_link14" (
+                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                )
+                                                {
+                                                    over "finger_r_link15" (
+                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                    )
+                                                    {
+                                                        over "finger_r_link16" (
+                                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                                        )
+                                                        {
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            over "finger_r_link17" (
+                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                            )
+                                            {
+                                                over "finger_r_link18" (
+                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                )
+                                                {
+                                                    over "finger_r_link19" (
+                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                    )
+                                                    {
+                                                        over "finger_r_link20" (
+                                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                                        )
+                                                        {
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            over "left_wheel_steer_link" (
+                prepend apiSchemas = ["IsaacLinkAPI"]
+            )
+            {
+                over "left_wheel_drive_link" (
+                    prepend apiSchemas = ["IsaacLinkAPI"]
+                )
+                {
+                }
+            }
+
+            over "right_wheel_steer_link" (
+                prepend apiSchemas = ["IsaacLinkAPI"]
+            )
+            {
+                over "right_wheel_drive_link" (
+                    prepend apiSchemas = ["IsaacLinkAPI"]
+                )
+                {
+                }
+            }
+
+            over "rear_wheel_steer_link" (
+                prepend apiSchemas = ["IsaacLinkAPI"]
+            )
+            {
+                over "rear_wheel_drive_link" (
+                    prepend apiSchemas = ["IsaacLinkAPI"]
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "Physics"
+    {
+        over "lift_joint" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "head_joint1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "head_joint2" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "arm_l_joint1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "arm_l_joint2" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "arm_l_joint3" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "arm_l_joint4" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "arm_l_joint5" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "arm_l_joint6" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "arm_l_joint7" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "arm_r_joint1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "arm_r_joint2" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "arm_r_joint3" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "arm_r_joint4" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "arm_r_joint5" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "arm_r_joint6" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "arm_r_joint7" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint2" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint3" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint4" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint5" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint6" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint7" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint8" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint9" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint10" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint11" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint12" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint13" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint14" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint15" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint16" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint17" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint18" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint19" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint20" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint2" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint3" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint4" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint5" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint6" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint7" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint8" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint9" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint10" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint11" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint12" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint13" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint14" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint15" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint16" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint17" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint18" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint19" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint20" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "left_wheel_steer" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "left_wheel_drive" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "right_wheel_steer" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "right_wheel_drive" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "rear_wheel_steer" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "rear_wheel_drive" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+    }
+}
+

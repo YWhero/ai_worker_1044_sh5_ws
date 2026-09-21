@@ -1,0 +1,46 @@
+{
+  "selected_cameras": [
+    "cam_right_head"
+  ],
+  "selected_state_topics": [
+    "/arm_hand/joint_states"
+  ],
+  "selected_action_topics": [
+    "/leader/joint_trajectory_command_broadcaster_right/joint_trajectory",
+    "/leader/joint_trajectory_command_broadcaster_right_hand/joint_trajectory"
+  ],
+  "selected_joints": [
+    "arm_r_joint1",
+    "arm_r_joint2",
+    "arm_r_joint3",
+    "arm_r_joint4",
+    "arm_r_joint5",
+    "arm_r_joint6",
+    "arm_r_joint7",
+    "finger_r_joint1",
+    "finger_r_joint2",
+    "finger_r_joint3",
+    "finger_r_joint4",
+    "finger_r_joint5",
+    "finger_r_joint6",
+    "finger_r_joint7",
+    "finger_r_joint8",
+    "finger_r_joint9",
+    "finger_r_joint10",
+    "finger_r_joint11",
+    "finger_r_joint12",
+    "finger_r_joint13",
+    "finger_r_joint14",
+    "finger_r_joint15",
+    "finger_r_joint16",
+    "finger_r_joint17",
+    "finger_r_joint18",
+    "finger_r_joint19",
+    "finger_r_joint20"
+  ],
+  "tactile_mode": "separate_raw",
+  "selected_tactile_topics": [
+    "/right_hand/finger_pressures"
+  ],
+  "tactile_baseline_samples": 20
+}

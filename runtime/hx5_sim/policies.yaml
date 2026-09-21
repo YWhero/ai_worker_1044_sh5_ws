@@ -1,0 +1,87 @@
+# Extend the official two-process services; override only the simulation
+# endpoint, names, configuration, data mounts, and service environment loader.
+name: cyclo_1044_hx5_policies
+x-policy-environment: &policy_environment
+  ROS_DOMAIN_ID: '105'
+  RMW_IMPLEMENTATION: rmw_zenoh_cpp
+  ZENOH_CONFIG_OVERRIDE: 'mode="client";connect/endpoints=["tcp/127.0.0.1:7455"];scouting/multicast/enabled=false;transport/shared_memory/enabled=false'
+  ZENOH_SHM_ENABLED: 'false'
+  ZENOH_TRANSPORT_SHM_ENABLED: 'false'
+
+services:
+  lerobot:
+    extends:
+      file: ${CYCLO_POLICY_BASE_COMPOSE:-../../src/cyclo_intelligence/docker/docker-compose.yml}
+      service: lerobot
+    container_name: lerobot_server_1044_hx5_sim
+    image: cyclo-1044-sh5/lerobot:sh5-c8ce413-amd64
+    ipc: private
+    shm_size: 2gb
+    environment: *policy_environment
+    volumes: !override
+      - ${HX5_SIM_ROOT:?}/simulation/cyclo:/workspace
+      - ${HX5_SIM_ROOT:?}/simulation/cyclo/huggingface:/root/.cache/huggingface
+      - ${HX5_SIM_ROOT:?}/simulation/cyclo/zenoh_cache:/root/.cache/zenoh_ros2_sdk
+      - ${HX5_SIM_ROOT:?}/src/cyclo_intelligence/cyclo_brain/sdk/zenoh_ros2_sdk:/zenoh_sdk:ro
+      - ${HX5_SIM_ROOT:?}/src/robotis_interfaces:/zenoh_sdk/messages/robotis_interfaces:ro
+      - ${HX5_SIM_ROOT:?}/src/cyclo_intelligence/cyclo_brain/sdk/robot_client:/robot_client_sdk:ro
+      - ${HX5_SIM_ROOT:?}/src/cyclo_intelligence/cyclo_brain/sdk/action_chunk_processing:/action_chunk_processing_sdk:ro
+      - ${HX5_SIM_ROOT:?}/src/cyclo_intelligence/cyclo_brain/policy/common/runtime:/policy_runtime:ro
+      - ${HX5_SIM_ROOT:?}/src/cyclo_intelligence/cyclo_brain/policy/lerobot/lerobot_engine:/app/lerobot_engine:ro
+      - ${HX5_SIM_ROOT:?}/src/cyclo_intelligence/shared/shared/robot_configs:/orchestrator_config:ro
+      - ${HX5_SIM_ROOT:?}/runtime/hx5_sim/robot_configs/ffw_sh5_rev1_config.yaml:/orchestrator_config/ffw_sh5_rev1_config.yaml:ro
+      - ${HX5_SIM_ROOT:?}/runtime/hx5_sim/policy_service.sh:/etc/s6-overlay/s6-rc.d/main-runtime/run:ro
+      - ${HX5_SIM_ROOT:?}/runtime/hx5_sim/policy_service.sh:/etc/s6-overlay/s6-rc.d/engine-process/run:ro
+  vitacformer:
+    extends:
+      file: ${CYCLO_POLICY_BASE_COMPOSE:-../../src/cyclo_intelligence/docker/docker-compose.yml}
+      service: vitacformer
+    container_name: vitacformer_server_1044_hx5_sim
+    image: cyclo-1044-sh5/model-vitacformer:hx5-sim-amd64
+    ipc: private
+    shm_size: 2gb
+    environment:
+      <<: *policy_environment
+      # Explicit simulator callback-jitter budget; hardware keeps strict defaults.
+      CYCLO_SENSOR_HISTORY_MODE: simulation
+      CYCLO_SIM_TACTILE_HISTORY_MAX_AGE_S: '0.075'
+      # Open HX5 -> checkpoint first hand pose, only during >=5s initial sync.
+      CYCLO_INITIAL_POSE_SYNC_MODE: simulation
+      CYCLO_SIM_INITIAL_POSE_SYNC_HAND_MAX_DELTA_BY_KEY: hand_right=1.55
+    volumes: !override
+      - ${HX5_SIM_ROOT:?}/simulation/cyclo:/workspace
+      - ${HX5_SIM_ROOT:?}/simulation/cyclo/huggingface:/root/.cache/huggingface
+      - ${HX5_SIM_ROOT:?}/simulation/cyclo/zenoh_cache:/root/.cache/zenoh_ros2_sdk
+      - ${HX5_SIM_ROOT:?}/src/cyclo_intelligence/cyclo_brain/sdk/zenoh_ros2_sdk:/zenoh_sdk:ro
+      - ${HX5_SIM_ROOT:?}/src/robotis_interfaces:/zenoh_sdk/messages/robotis_interfaces:ro
+      - ${HX5_SIM_ROOT:?}/src/cyclo_intelligence/cyclo_brain/sdk/robot_client:/robot_client_sdk:ro
+      - ${HX5_SIM_ROOT:?}/src/cyclo_intelligence/cyclo_brain/sdk/action_chunk_processing:/action_chunk_processing_sdk:ro
+      - ${HX5_SIM_ROOT:?}/src/cyclo_intelligence/cyclo_brain/policy/common/runtime:/policy_runtime:ro
+      - ${HX5_SIM_ROOT:?}/src/cyclo_intelligence/shared/shared/robot_configs:/orchestrator_config:ro
+      - ${HX5_SIM_ROOT:?}/runtime/hx5_sim/robot_configs/ffw_sh5_rev1_config.yaml:/orchestrator_config/ffw_sh5_rev1_config.yaml:ro
+      - ${HX5_SIM_ROOT:?}/runtime/hx5_sim/policy_service.sh:/etc/s6-overlay/s6-rc.d/main-runtime/run:ro
+      - ${HX5_SIM_ROOT:?}/runtime/hx5_sim/policy_service.sh:/etc/s6-overlay/s6-rc.d/engine-process/run:ro
+  groot:
+    extends:
+      file: ${CYCLO_POLICY_BASE_COMPOSE:-../../src/cyclo_intelligence/docker/docker-compose.yml}
+      service: groot
+    container_name: groot_server_1044_hx5_sim
+    image: cyclo-1044-sh5/groot:local-amd64
+    ipc: private
+    shm_size: 2gb
+    environment: *policy_environment
+    volumes: !override
+      - ${HX5_SIM_ROOT:?}/simulation/cyclo:/workspace
+      - ${HX5_SIM_ROOT:?}/simulation/cyclo/huggingface:/root/.cache/huggingface
+      - ${HX5_SIM_ROOT:?}/simulation/cyclo/zenoh_cache:/root/.cache/zenoh_ros2_sdk
+      - ${HX5_SIM_ROOT:?}/src/cyclo_intelligence/cyclo_brain/sdk/zenoh_ros2_sdk:/zenoh_sdk:ro
+      - ${HX5_SIM_ROOT:?}/src/robotis_interfaces:/zenoh_sdk/messages/robotis_interfaces:ro
+      - ${HX5_SIM_ROOT:?}/src/cyclo_intelligence/cyclo_brain/sdk/robot_client:/robot_client_sdk:ro
+      - ${HX5_SIM_ROOT:?}/src/cyclo_intelligence/cyclo_brain/sdk/action_chunk_processing:/action_chunk_processing_sdk:ro
+      - ${HX5_SIM_ROOT:?}/src/cyclo_intelligence/cyclo_brain/policy/common/runtime:/policy_runtime:ro
+      - ${HX5_SIM_ROOT:?}/src/cyclo_intelligence/cyclo_brain/policy/groot/groot_engine:/app/groot_engine:ro
+      - ${HX5_SIM_ROOT:?}/src/cyclo_intelligence/cyclo_brain/policy/groot/runtime:/app/runtime:ro
+      - ${HX5_SIM_ROOT:?}/src/cyclo_intelligence/shared/shared/robot_configs:/orchestrator_config:ro
+      - ${HX5_SIM_ROOT:?}/runtime/hx5_sim/robot_configs/ffw_sh5_rev1_config.yaml:/orchestrator_config/ffw_sh5_rev1_config.yaml:ro
+      - ${HX5_SIM_ROOT:?}/runtime/hx5_sim/policy_service.sh:/etc/s6-overlay/s6-rc.d/main-runtime/run:ro
+      - ${HX5_SIM_ROOT:?}/runtime/hx5_sim/policy_service.sh:/etc/s6-overlay/s6-rc.d/engine-process/run:ro

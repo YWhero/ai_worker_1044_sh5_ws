@@ -1,0 +1,108 @@
+# Dedicated ViTacFormer inference image for Jetson Orin.
+# Build context: cyclo_brain/
+
+ARG BASE_IMAGE=dustynv/lerobot:r36.4.0-cu128-24.04
+FROM ${BASE_IMAGE}
+
+ARG S6_OVERLAY_VERSION=3.2.0.2
+
+ENV LANG=en_US.UTF-8
+ENV PIP_INDEX_URL=https://pypi.org/simple
+ENV PIP_EXTRA_INDEX_URL=
+
+RUN curl -fsSL -o /tmp/s6-overlay-noarch.tar.xz \
+      https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-noarch.tar.xz \
+    && curl -fsSL -o /tmp/s6-overlay-aarch64.tar.xz \
+      https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-aarch64.tar.xz \
+    && tar -C / -Jxpf /tmp/s6-overlay-noarch.tar.xz \
+    && tar -C / -Jxpf /tmp/s6-overlay-aarch64.tar.xz \
+    && rm /tmp/s6-overlay-*.tar.xz
+
+RUN pip install --no-cache-dir \
+      "eclipse-zenoh>=1.6.0,<1.7.0" \
+      "rosbags>=0.11.0" \
+      "GitPython>=3.1.18" \
+      "json5>=0.9.14" \
+      "opencv-python-headless>=4.5,<4.12" \
+      pyyaml \
+    && python -c "import cv2, torch, torchvision; print(torch.__version__, torchvision.__version__, cv2.__version__)"
+
+COPY policy/common/runtime/ /policy_runtime/
+COPY policy/common/s6-services/ /etc/s6-overlay/s6-rc.d/
+COPY policy/vitacformer/vitacformer_engine/ /app/vitacformer_engine/
+COPY sdk/zenoh_ros2_sdk/ /zenoh_sdk/
+COPY sdk/robot_client/ /robot_client_sdk/
+COPY sdk/action_chunk_processing/ /action_chunk_processing_sdk/
+
+RUN mkdir -p /orchestrator_config /workspace /root/.cache/zenoh_ros2_sdk \
+    && chmod +x /etc/s6-overlay/s6-rc.d/main-runtime/run \
+             /etc/s6-overlay/s6-rc.d/engine-process/run
+
+ENV HF_HOME=/root/.cache/huggingface
+ENV TORCH_HOME=/root/.cache/torch
+ENV ZENOH_SDK_PATH=/zenoh_sdk
+ENV ROBOT_CLIENT_SDK_PATH=/robot_client_sdk
+ENV ACTION_CHUNK_PROCESSING_SDK_PATH=/action_chunk_processing_sdk
+ENV ORCHESTRATOR_CONFIG_PATH=/orchestrator_config
+ENV PYTHONPATH=/app:/policy_runtime:/zenoh_sdk:/robot_client_sdk:/action_chunk_processing_sdk
+
+ENV POLICY_BACKEND=vitacformer
+ENV POLICY_ENGINE_MODULE=vitacformer_engine
+ENV POLICY_RUNTIME_PROFILE=vitacformer-sh5-v1
+ENV POLICY_ACTION_REQUEST_MODE_OVERRIDE=async
+ENV POLICY_REFILL_MARGIN_S_OVERRIDE=0.55
+ENV POLICY_SOURCE_CHUNK_LIMIT=20
+ENV POLICY_TEMPORAL_ENSEMBLE_COEFF=0.01
+ENV POLICY_TEMPORAL_ENSEMBLE_TAIL_FADE_S=0.2
+
+ENV INFERENCE_HZ=30
+ENV CONTROL_HZ=100
+ENV TARGET_CHUNK_SIZE=none
+ENV POSTPROCESS_ACTIONS=true
+ENV ACTION_ALIGNMENT_MODE=l2
+ENV CHUNK_ALIGN_WINDOW_S=0.3
+ENV REFILL_MARGIN_S=0.55
+ENV REFILL_LATENCY_WARMUP_SAMPLES=1
+ENV REFILL_LATENCY_SAMPLE_MAX_S=2.0
+ENV GET_ACTION_TIMEOUT_S=10.0
+
+ENV REAL_ACTION_SAFETY_REQUIRED=true
+ENV REAL_ACTION_SAFETY_ENABLED=true
+ENV REAL_FIRST_ACTION_MAX_DELTA_RAD=0.03
+ENV REAL_FIRST_ACTION_MAX_DELTA_BY_KEY=arm_left=0.03,arm_right=0.03,hand_left=0.10,hand_right=0.10
+ENV REAL_TRACKING_MAX_DELTA_BY_KEY=arm_left=0.06,arm_right=0.06,hand_left=1.20,hand_right=0.70
+ENV REAL_TRACKING_BRIDGE_MAX_TOTAL_DELTA_BY_KEY=arm_left=0.30,arm_right=0.61
+ENV REAL_WARM_START_ENABLED=true
+ENV REAL_WARM_START_MAX_TOTAL_DELTA_BY_KEY=arm_left=0.55,arm_right=0.61,hand_left=1.55,hand_right=0.70
+ENV REAL_RESUME_WARM_START_MAX_TOTAL_DELTA_BY_KEY=arm_left=0.55,arm_right=0.61,hand_left=1.55,hand_right=0.70
+ENV REAL_SOURCE_STEP_MAX_DELTA_RAD=0.03
+ENV REAL_SOURCE_STEP_BRIDGE_ENABLED=true
+ENV REAL_SOURCE_STEP_BRIDGE_MAX_RAW_DELTA_BY_KEY=arm_left=0.09,arm_right=0.12,hand_left=0.30,hand_right=0.28
+ENV REAL_JOINT_LIMIT_MODE=clamp
+ENV REAL_JOINT_LIMIT_TOLERANCE_RAD=0.02
+ENV REAL_JOINT_LIMIT_TOLERANCE_BY_JOINT=arm_l_joint2=0.18,arm_r_joint2=0.26,finger_l_joint6=0.05,finger_l_joint10=0.04,finger_l_joint14=0.04,finger_l_joint18=0.04
+ENV REAL_STATE_MAX_AGE_S=0.5
+ENV REAL_START_DEADLINE_S=15.0
+
+RUN { \
+    echo ""; \
+    echo "# Cyclo ROS/Zenoh runtime environment."; \
+    echo "# For a remote Zenoh router, comment the local line and uncomment the remote example."; \
+    echo 'export ROS_DOMAIN_ID="${ROS_DOMAIN_ID:-30}"'; \
+    echo "export RMW_IMPLEMENTATION=rmw_zenoh_cpp"; \
+    echo "export ZENOH_CONFIG_OVERRIDE='transport/shared_memory/enabled=true'"; \
+    echo "# export ZENOH_CONFIG_OVERRIDE='transport/shared_memory/enabled=true;mode=\"client\";connect/endpoints=[\"tcp/192.168.60.139:7447\"]'"; \
+    } > /tmp/cyclo_bashrc \
+    && if [ -f /root/.bashrc ]; then cat /root/.bashrc >> /tmp/cyclo_bashrc; fi \
+    && mv /tmp/cyclo_bashrc /root/.bashrc
+
+WORKDIR /app
+
+HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
+    CMD S6_SVSTAT="$(ls /package/admin/s6-*/command/s6-svstat 2>/dev/null | head -1)" \
+     && [ -n "$S6_SVSTAT" ] \
+     && "$S6_SVSTAT" /run/service/main-runtime 2>&1 | grep -q "up" \
+     && "$S6_SVSTAT" /run/service/engine-process 2>&1 | grep -q "up" \
+     || exit 1
+
+ENTRYPOINT ["/init"]

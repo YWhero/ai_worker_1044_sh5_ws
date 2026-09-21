@@ -1,0 +1,9 @@
+{
+  "repo_id": "Dongkkka/Task000519_PourWater_ViTacFormer_H100_LR1e4_B512_Hand_Intern",
+  "revision": "b4f21caa4e6a7a05814958b63d5ced46a9374321",
+  "source_repo_commit": "d94788272b5f5e18a80bf62e3e5d51e7d2581d77",
+  "sha256": {
+    "train_config.json": "1706377f2b5176bb8a8e9dc4677078fb69bd90dc57e12f04d9b6fccf5517ed77",
+    "inference_config.json": "899f6bbf2c1fc8949f34275d3abeaef2925ac356b1f19b44c3a8cc0c0a8a576d"
+  }
+}

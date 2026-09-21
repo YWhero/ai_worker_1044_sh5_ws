@@ -1,0 +1,5 @@
+#!/command/with-contenv bash
+set -e
+source /opt/ros/jazzy/setup.bash
+export ZENOH_CONFIG_OVERRIDE='mode="router";listen/endpoints=["tcp/127.0.0.1:7855"];connect/endpoints=[];scouting/multicast/enabled=false;transport/shared_memory/enabled=false'
+exec ros2 run rmw_zenoh_cpp rmw_zenohd

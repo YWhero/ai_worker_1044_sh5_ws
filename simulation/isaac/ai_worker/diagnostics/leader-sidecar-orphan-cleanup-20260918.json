@@ -1,0 +1,137 @@
+{
+  "ros_domain_id": 115,
+  "terminated_exact_private_processes": {
+    "169": {
+      "argv": [
+        "/opt/ros/jazzy/lib/robot_state_publisher/robot_state_publisher",
+        "--ros-args",
+        "--params-file",
+        "/tmp/hx5_isaac_rsp.yaml"
+      ],
+      "pgid": 99
+    },
+    "436": {
+      "argv": [
+        "/opt/ros/jazzy/lib/robot_state_publisher/robot_state_publisher",
+        "--ros-args",
+        "--params-file",
+        "/tmp/hx5_isaac_rsp.yaml"
+      ],
+      "pgid": 413
+    },
+    "524": {
+      "argv": [
+        "/opt/ros/jazzy/lib/robot_state_publisher/robot_state_publisher",
+        "--ros-args",
+        "--params-file",
+        "/tmp/hx5_isaac_rsp.yaml"
+      ],
+      "pgid": 501
+    },
+    "2031": {
+      "argv": [
+        "/opt/ros/jazzy/lib/robot_state_publisher/robot_state_publisher",
+        "--ros-args",
+        "--params-file",
+        "/tmp/hx5_isaac_rsp.yaml"
+      ],
+      "pgid": 2008
+    },
+    "2540": {
+      "argv": [
+        "/usr/bin/python3",
+        "/root/ros2_ws/install/hx5_simulation/lib/hx5_simulation/hand_presets",
+        "--ros-args",
+        "--params-file",
+        "/tmp/hx5_isaac_rsp.yaml"
+      ],
+      "pgid": 2514
+    },
+    "2541": {
+      "argv": [
+        "/opt/ros/jazzy/lib/robot_state_publisher/robot_state_publisher",
+        "--ros-args",
+        "--params-file",
+        "/tmp/hx5_isaac_rsp.yaml"
+      ],
+      "pgid": 2514
+    },
+    "3644": {
+      "argv": [
+        "/usr/bin/python3",
+        "/root/ros2_ws/install/hx5_simulation/lib/hx5_simulation/hand_presets",
+        "--ros-args",
+        "--params-file",
+        "/tmp/hx5_isaac_rsp.yaml"
+      ],
+      "pgid": 3618
+    },
+    "3645": {
+      "argv": [
+        "/opt/ros/jazzy/lib/robot_state_publisher/robot_state_publisher",
+        "--ros-args",
+        "--params-file",
+        "/tmp/hx5_isaac_rsp.yaml"
+      ],
+      "pgid": 3618
+    },
+    "4418": {
+      "argv": [
+        "/usr/bin/python3",
+        "/root/ros2_ws/install/hx5_simulation/lib/hx5_simulation/hand_presets",
+        "--ros-args",
+        "--params-file",
+        "/tmp/hx5_isaac_rsp.yaml"
+      ],
+      "pgid": 4392
+    },
+    "4419": {
+      "argv": [
+        "/opt/ros/jazzy/lib/robot_state_publisher/robot_state_publisher",
+        "--ros-args",
+        "--params-file",
+        "/tmp/hx5_isaac_rsp.yaml"
+      ],
+      "pgid": 4392
+    },
+    "4576": {
+      "argv": [
+        "/usr/bin/python3",
+        "/root/ros2_ws/install/hx5_simulation/lib/hx5_simulation/hand_presets",
+        "--ros-args",
+        "--params-file",
+        "/tmp/hx5_isaac_rsp.yaml"
+      ],
+      "pgid": 4550
+    },
+    "4577": {
+      "argv": [
+        "/opt/ros/jazzy/lib/robot_state_publisher/robot_state_publisher",
+        "--ros-args",
+        "--params-file",
+        "/tmp/hx5_isaac_rsp.yaml"
+      ],
+      "pgid": 4550
+    },
+    "4770": {
+      "argv": [
+        "/usr/bin/python3",
+        "/root/ros2_ws/install/hx5_simulation/lib/hx5_simulation/hand_presets",
+        "--ros-args",
+        "--params-file",
+        "/tmp/hx5_isaac_rsp.yaml"
+      ],
+      "pgid": 4744
+    },
+    "4771": {
+      "argv": [
+        "/opt/ros/jazzy/lib/robot_state_publisher/robot_state_publisher",
+        "--ros-args",
+        "--params-file",
+        "/tmp/hx5_isaac_rsp.yaml"
+      ],
+      "pgid": 4744
+    }
+  },
+  "remaining_live": []
+}

@@ -1,0 +1,967 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.2"
+    }
+    defaultPrim = "ffw_sh5_follower"
+    endTimeCode = 1000000
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    startTimeCode = 0
+    subLayers = [
+        @./physics.usda@
+    ]
+    upAxis = "Z"
+)
+
+over "ffw_sh5_follower"
+{
+    over "Physics"
+    {
+        over "lift_joint" (
+            delete apiSchemas = ["PhysicsDriveAPI:linear", "PhysicsJointStateAPI:linear"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "head_joint1" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "head_joint2" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "arm_l_joint1" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "arm_l_joint2" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "arm_l_joint3" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "arm_l_joint4" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "arm_l_joint5" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "arm_l_joint6" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "arm_l_joint7" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "arm_r_joint1" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "arm_r_joint2" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "arm_r_joint3" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "arm_r_joint4" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "arm_r_joint5" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "arm_r_joint6" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "arm_r_joint7" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint1" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint2" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint3" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint4" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint5" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint6" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint7" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint8" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint9" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint10" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint11" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint12" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint13" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint14" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint15" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint16" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint17" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint18" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint19" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_l_joint20" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint1" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint2" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint3" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint4" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint5" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint6" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint7" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint8" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint9" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint10" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint11" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint12" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint13" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint14" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint15" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint16" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint17" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint18" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint19" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "finger_r_joint20" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "left_wheel_steer" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "left_wheel_drive" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "right_wheel_steer" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "right_wheel_drive" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "rear_wheel_steer" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "rear_wheel_drive" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        def MjcActuator "lift_joint_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/lift_joint>
+        }
+
+        def MjcActuator "head_joint1_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/head_joint1>
+        }
+
+        def MjcActuator "head_joint2_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/head_joint2>
+        }
+
+        def MjcActuator "arm_l_joint1_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/arm_l_joint1>
+        }
+
+        def MjcActuator "arm_l_joint2_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/arm_l_joint2>
+        }
+
+        def MjcActuator "arm_l_joint3_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/arm_l_joint3>
+        }
+
+        def MjcActuator "arm_l_joint4_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/arm_l_joint4>
+        }
+
+        def MjcActuator "arm_l_joint5_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/arm_l_joint5>
+        }
+
+        def MjcActuator "arm_l_joint6_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/arm_l_joint6>
+        }
+
+        def MjcActuator "arm_l_joint7_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/arm_l_joint7>
+        }
+
+        def MjcActuator "arm_r_joint1_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/arm_r_joint1>
+        }
+
+        def MjcActuator "arm_r_joint2_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/arm_r_joint2>
+        }
+
+        def MjcActuator "arm_r_joint3_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/arm_r_joint3>
+        }
+
+        def MjcActuator "arm_r_joint4_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/arm_r_joint4>
+        }
+
+        def MjcActuator "arm_r_joint5_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/arm_r_joint5>
+        }
+
+        def MjcActuator "arm_r_joint6_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/arm_r_joint6>
+        }
+
+        def MjcActuator "arm_r_joint7_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/arm_r_joint7>
+        }
+
+        def MjcActuator "finger_l_joint1_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_l_joint1>
+        }
+
+        def MjcActuator "finger_l_joint2_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_l_joint2>
+        }
+
+        def MjcActuator "finger_l_joint3_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_l_joint3>
+        }
+
+        def MjcActuator "finger_l_joint4_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_l_joint4>
+        }
+
+        def MjcActuator "finger_l_joint5_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_l_joint5>
+        }
+
+        def MjcActuator "finger_l_joint6_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_l_joint6>
+        }
+
+        def MjcActuator "finger_l_joint7_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_l_joint7>
+        }
+
+        def MjcActuator "finger_l_joint8_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_l_joint8>
+        }
+
+        def MjcActuator "finger_l_joint9_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_l_joint9>
+        }
+
+        def MjcActuator "finger_l_joint10_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_l_joint10>
+        }
+
+        def MjcActuator "finger_l_joint11_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_l_joint11>
+        }
+
+        def MjcActuator "finger_l_joint12_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_l_joint12>
+        }
+
+        def MjcActuator "finger_l_joint13_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_l_joint13>
+        }
+
+        def MjcActuator "finger_l_joint14_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_l_joint14>
+        }
+
+        def MjcActuator "finger_l_joint15_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_l_joint15>
+        }
+
+        def MjcActuator "finger_l_joint16_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_l_joint16>
+        }
+
+        def MjcActuator "finger_l_joint17_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_l_joint17>
+        }
+
+        def MjcActuator "finger_l_joint18_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_l_joint18>
+        }
+
+        def MjcActuator "finger_l_joint19_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_l_joint19>
+        }
+
+        def MjcActuator "finger_l_joint20_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_l_joint20>
+        }
+
+        def MjcActuator "finger_r_joint1_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_r_joint1>
+        }
+
+        def MjcActuator "finger_r_joint2_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_r_joint2>
+        }
+
+        def MjcActuator "finger_r_joint3_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_r_joint3>
+        }
+
+        def MjcActuator "finger_r_joint4_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_r_joint4>
+        }
+
+        def MjcActuator "finger_r_joint5_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_r_joint5>
+        }
+
+        def MjcActuator "finger_r_joint6_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_r_joint6>
+        }
+
+        def MjcActuator "finger_r_joint7_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_r_joint7>
+        }
+
+        def MjcActuator "finger_r_joint8_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_r_joint8>
+        }
+
+        def MjcActuator "finger_r_joint9_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_r_joint9>
+        }
+
+        def MjcActuator "finger_r_joint10_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_r_joint10>
+        }
+
+        def MjcActuator "finger_r_joint11_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_r_joint11>
+        }
+
+        def MjcActuator "finger_r_joint12_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_r_joint12>
+        }
+
+        def MjcActuator "finger_r_joint13_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_r_joint13>
+        }
+
+        def MjcActuator "finger_r_joint14_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_r_joint14>
+        }
+
+        def MjcActuator "finger_r_joint15_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_r_joint15>
+        }
+
+        def MjcActuator "finger_r_joint16_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_r_joint16>
+        }
+
+        def MjcActuator "finger_r_joint17_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_r_joint17>
+        }
+
+        def MjcActuator "finger_r_joint18_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_r_joint18>
+        }
+
+        def MjcActuator "finger_r_joint19_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_r_joint19>
+        }
+
+        def MjcActuator "finger_r_joint20_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/finger_r_joint20>
+        }
+
+        def MjcActuator "left_wheel_steer_actuator"
+        {
+            uniform double mjc:forceRange:max = 9999
+            uniform double mjc:forceRange:min = -9999
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/left_wheel_steer>
+        }
+
+        def MjcActuator "left_wheel_drive_actuator"
+        {
+            uniform double mjc:forceRange:max = 9999
+            uniform double mjc:forceRange:min = -9999
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/left_wheel_drive>
+        }
+
+        def MjcActuator "right_wheel_steer_actuator"
+        {
+            uniform double mjc:forceRange:max = 9999
+            uniform double mjc:forceRange:min = -9999
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/right_wheel_steer>
+        }
+
+        def MjcActuator "right_wheel_drive_actuator"
+        {
+            uniform double mjc:forceRange:max = 9999
+            uniform double mjc:forceRange:min = -9999
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/right_wheel_drive>
+        }
+
+        def MjcActuator "rear_wheel_steer_actuator"
+        {
+            uniform double mjc:forceRange:max = 9999
+            uniform double mjc:forceRange:min = -9999
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/rear_wheel_steer>
+        }
+
+        def MjcActuator "rear_wheel_drive_actuator"
+        {
+            uniform double mjc:forceRange:max = 9999
+            uniform double mjc:forceRange:min = -9999
+            custom rel mjc:target
+            append rel mjc:target = </ffw_sh5_follower/Physics/rear_wheel_drive>
+        }
+    }
+}
+

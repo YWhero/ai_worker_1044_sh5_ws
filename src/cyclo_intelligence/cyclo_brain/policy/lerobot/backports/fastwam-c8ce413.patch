@@ -1,0 +1,55 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -92,6 +92,7 @@
+ 
+ # Optional dependencies
+ [project.optional-dependencies]
++fastwam = ["lerobot[transformers-dep]", "lerobot[diffusers-dep]"]
+ 
+ # ── Feature-scoped extras ──────────────────────────────────
+ dataset = [
+--- a/src/lerobot/policies/factory.py
++++ b/src/lerobot/policies/factory.py
+@@ -47,6 +47,7 @@
+ from .act.configuration_act import ACTConfig
+ from .diffusion.configuration_diffusion import DiffusionConfig
+ from .eo1.configuration_eo1 import EO1Config
++from .fastwam.configuration_fastwam import FastWAMConfig
+ from .groot.configuration_groot import GrootConfig
+ from .multi_task_dit.configuration_multi_task_dit import MultiTaskDiTConfig
+ from .pi0.configuration_pi0 import PI0Config
+@@ -143,6 +144,10 @@
+         from .xvla.modeling_xvla import XVLAPolicy
+ 
+         return XVLAPolicy
++    elif name == "fastwam":
++        from .fastwam.modeling_fastwam import FastWAMPolicy
++
++        return FastWAMPolicy
+     elif name == "wall_x":
+         from .wall_x.modeling_wall_x import WallXPolicy
+ 
+@@ -199,6 +204,8 @@
+         return GrootConfig(**kwargs)
+     elif policy_type == "xvla":
+         return XVLAConfig(**kwargs)
++    elif policy_type == "fastwam":
++        return FastWAMConfig(**kwargs)
+     elif policy_type == "wall_x":
+         return WallXConfig(**kwargs)
+     elif policy_type == "eo1":
+@@ -337,6 +344,14 @@
+         )
+ 
+         processors = make_multi_task_dit_pre_post_processors(
++            config=policy_cfg,
++            dataset_stats=kwargs.get("dataset_stats"),
++        )
++
++    elif isinstance(policy_cfg, FastWAMConfig):
++        from .fastwam.processor_fastwam import make_fastwam_pre_post_processors
++
++        processors = make_fastwam_pre_post_processors(
+             config=policy_cfg,
+             dataset_stats=kwargs.get("dataset_stats"),
+         )

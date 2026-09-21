@@ -1,0 +1,6 @@
+src/cyclo_intelligence
+simulation
+**/.git
+**/__pycache__
+**/docker/workspace
+**/node_modules

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sdf version="1.10">
+  <world name="l_sorting_workcell">
+    <gravity>0 0 -9.8</gravity>
+    <physics name="100hz" type="ignored">
+      <max_step_size>0.01</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>100</real_time_update_rate>
+    </physics>
+
+    <plugin name="gz::sim::systems::Physics" filename="gz-sim-physics-system"/>
+    <plugin name="gz::sim::systems::UserCommands" filename="gz-sim-user-commands-system"/>
+    <plugin name="gz::sim::systems::SceneBroadcaster" filename="gz-sim-scene-broadcaster-system"/>
+    <plugin name="gz::sim::systems::Contact" filename="gz-sim-contact-system"/>
+    <plugin name="gz::sim::systems::Sensors" filename="gz-sim-sensors-system">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+
+    <scene>
+      <ambient>0.55 0.55 0.55 1</ambient>
+      <background>0.72 0.75 0.78 1</background>
+      <shadows>true</shadows>
+      <grid>false</grid>
+    </scene>
+
+    <gui>
+      <camera name="user_camera">
+        <pose>5.8 -4.8 5.2 0 0.50 2.34</pose>
+      </camera>
+    </gui>
+
+    <light name="sun" type="directional">
+      <pose>0 0 8 0 0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1.1</intensity>
+      <direction>-0.45 0.25 -0.86</direction>
+      <diffuse>0.90 0.90 0.88 1</diffuse>
+      <specular>0.20 0.20 0.20 1</specular>
+    </light>
+    <light name="workcell_fill_light" type="point">
+      <pose>-0.5 1.5 5.0 0 0 0</pose>
+      <cast_shadows>false</cast_shadows>
+      <intensity>1.2</intensity>
+      <diffuse>0.95 0.97 1.0 1</diffuse>
+      <specular>0.15 0.15 0.15 1</specular>
+      <attenuation><range>14</range><constant>0.7</constant><linear>0.03</linear><quadratic>0.01</quadratic></attenuation>
+    </light>
+
+    <model name="l_workcell_floor">
+      <static>true</static>
+      <link name="floor">
+        <collision name="collision">
+          <geometry><plane><normal>0 0 1</normal><size>14 14</size></plane></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="visual">
+          <geometry><plane><normal>0 0 1</normal><size>14 14</size></plane></geometry>
+          <material><ambient>0.52 0.53 0.54 1</ambient><diffuse>0.68 0.69 0.70 1</diffuse><specular>0.08 0.08 0.08 1</specular></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="l_workcell_partition_walls">
+      <static>true</static>
+      <link name="partitions">
+        <collision name="left_wall_collision"><pose>-3.10 2.10 0.675 0 0 0</pose><geometry><box><size>0.06 4.00 1.35</size></box></geometry></collision>
+        <visual name="left_wall_visual"><pose>-3.10 2.10 0.675 0 0 0</pose><geometry><box><size>0.06 4.00 1.35</size></box></geometry><material><ambient>0.82 0.83 0.84 1</ambient><diffuse>0.94 0.95 0.96 1</diffuse></material></visual>
+        <collision name="rear_wall_collision"><pose>-0.70 4.10 0.675 0 0 0</pose><geometry><box><size>4.80 0.06 1.35</size></box></geometry></collision>
+        <visual name="rear_wall_visual"><pose>-0.70 4.10 0.675 0 0 0</pose><geometry><box><size>4.80 0.06 1.35</size></box></geometry><material><ambient>0.82 0.83 0.84 1</ambient><diffuse>0.94 0.95 0.96 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <model name="l_workcell_floor_markings">
+      <static>true</static>
+      <link name="markings">
+        <visual name="rack_clearance"><pose>-2.34 1.25 0.006 0 0 0</pose><geometry><box><size>0.05 2.70 0.01</size></box></geometry><material><ambient>0.85 0.64 0.02 1</ambient><diffuse>1.0 0.78 0.03 1</diffuse></material></visual>
+        <visual name="conveyor_clearance"><pose>-0.25 3.24 0.006 0 0 0</pose><geometry><box><size>3.20 0.05 0.01</size></box></geometry><material><ambient>0.85 0.64 0.02 1</ambient><diffuse>1.0 0.78 0.03 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <include>
+      <uri>model://l_workcell_rack</uri>
+      <name>empty_basket_deck</name>
+      <pose>-2.70 1.25 0 0 0 1.57079632679</pose>
+    </include>
+
+    <include><uri>model://l_workcell_empty_basket</uri><name>empty_basket_lower_1</name><pose>-2.68 0.77 0.625 0 0 1.57079632679</pose></include>
+    <include><uri>model://l_workcell_empty_basket</uri><name>empty_basket_lower_2</name><pose>-2.68 1.73 0.625 0 0 1.57079632679</pose></include>
+    <include><uri>model://l_workcell_empty_basket</uri><name>empty_basket_upper_1</name><pose>-2.68 0.77 1.025 0 0 1.57079632679</pose></include>
+    <include><uri>model://l_workcell_empty_basket</uri><name>empty_basket_upper_2</name><pose>-2.68 1.73 1.025 0 0 1.57079632679</pose></include>
+
+    <include>
+      <uri>model://l_workcell_conveyor</uri>
+      <name>filled_basket_conveyor</name>
+      <pose>-0.25 3.65 0 0 0 0</pose>
+    </include>
+
+    <include><uri>model://l_workcell_filled_basket</uri><name>filled_basket_1</name><pose>-0.95 3.65 0.77 0 0 0</pose></include>
+    <include><uri>model://l_workcell_filled_basket</uri><name>filled_basket_2</name><pose>0.45 3.65 0.77 0 0 0</pose></include>
+
+    <include><uri>model://l_workcell_item</uri><name>sorting_item_1</name><pose>-1.14 3.60 0.90 0 0 -0.08</pose></include>
+    <include><uri>model://l_workcell_item</uri><name>sorting_item_2</name><pose>-0.95 3.69 0.90 0 0 0.06</pose></include>
+    <include><uri>model://l_workcell_item</uri><name>sorting_item_3</name><pose>-0.76 3.59 0.90 0 0 -0.04</pose></include>
+    <include><uri>model://l_workcell_item</uri><name>sorting_item_4</name><pose>0.26 3.60 0.90 0 0 0.07</pose></include>
+    <include><uri>model://l_workcell_item</uri><name>sorting_item_5</name><pose>0.45 3.69 0.90 0 0 -0.05</pose></include>
+    <include><uri>model://l_workcell_item</uri><name>sorting_item_6</name><pose>0.64 3.59 0.90 0 0 0.03</pose></include>
+  </world>
+</sdf>

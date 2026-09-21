@@ -1,0 +1,3123 @@
+{
+  "schema_version": 1,
+  "stage": "/home/robotis-ai/workspaces/isaac_logistics_cell_ws/logistics_cell.usda",
+  "source_environment": "/home/robotis-ai/workspaces/isaac_logistics_cell_ws/logistics_cell.environment.usda",
+  "source_environment_sha256": "b0b5148f682d5d94216798c246d4b63474538cda3ecb733ae4d4f62ae64d2c47",
+  "source_urdf": "/home/robotis-ai/workspaces/hero/ai_worker_1044_sh5_ws/simulation/isaac/assets/sh5/robot.urdf",
+  "source_urdf_sha256": "4dfe4fc88b844cdc90373c3edf3da379f2b4790da8536ec468fb5512ec97fcd3",
+  "robot_usd": "/home/robotis-ai/workspaces/hero/ai_worker_1044_sh5_ws/simulation/isaac/assets/sh5/usd/robot/robot.usda",
+  "robot_prim_path": "/World/FFWSH5",
+  "articulation_root_path": "/World/FFWSH5/Geometry/base_link",
+  "base_body_path": "/World/FFWSH5/Geometry/base_link",
+  "floating_base": true,
+  "lift_active": true,
+  "position_joint_names": [
+    "arm_l_joint1",
+    "arm_l_joint2",
+    "arm_l_joint3",
+    "arm_l_joint4",
+    "arm_l_joint5",
+    "arm_l_joint6",
+    "arm_l_joint7",
+    "arm_r_joint1",
+    "arm_r_joint2",
+    "arm_r_joint3",
+    "arm_r_joint4",
+    "arm_r_joint5",
+    "arm_r_joint6",
+    "arm_r_joint7",
+    "finger_l_joint1",
+    "finger_l_joint2",
+    "finger_l_joint3",
+    "finger_l_joint4",
+    "finger_l_joint5",
+    "finger_l_joint6",
+    "finger_l_joint7",
+    "finger_l_joint8",
+    "finger_l_joint9",
+    "finger_l_joint10",
+    "finger_l_joint11",
+    "finger_l_joint12",
+    "finger_l_joint13",
+    "finger_l_joint14",
+    "finger_l_joint15",
+    "finger_l_joint16",
+    "finger_l_joint17",
+    "finger_l_joint18",
+    "finger_l_joint19",
+    "finger_l_joint20",
+    "finger_r_joint1",
+    "finger_r_joint2",
+    "finger_r_joint3",
+    "finger_r_joint4",
+    "finger_r_joint5",
+    "finger_r_joint6",
+    "finger_r_joint7",
+    "finger_r_joint8",
+    "finger_r_joint9",
+    "finger_r_joint10",
+    "finger_r_joint11",
+    "finger_r_joint12",
+    "finger_r_joint13",
+    "finger_r_joint14",
+    "finger_r_joint15",
+    "finger_r_joint16",
+    "finger_r_joint17",
+    "finger_r_joint18",
+    "finger_r_joint19",
+    "finger_r_joint20",
+    "head_joint1",
+    "head_joint2",
+    "lift_joint"
+  ],
+  "steer_joint_names": [
+    "left_wheel_steer",
+    "right_wheel_steer",
+    "rear_wheel_steer"
+  ],
+  "wheel_joint_names": [
+    "left_wheel_drive",
+    "right_wheel_drive",
+    "rear_wheel_drive"
+  ],
+  "driven_joint_names": [
+    "arm_l_joint1",
+    "arm_l_joint2",
+    "arm_l_joint3",
+    "arm_l_joint4",
+    "arm_l_joint5",
+    "arm_l_joint6",
+    "arm_l_joint7",
+    "arm_r_joint1",
+    "arm_r_joint2",
+    "arm_r_joint3",
+    "arm_r_joint4",
+    "arm_r_joint5",
+    "arm_r_joint6",
+    "arm_r_joint7",
+    "finger_l_joint1",
+    "finger_l_joint2",
+    "finger_l_joint3",
+    "finger_l_joint4",
+    "finger_l_joint5",
+    "finger_l_joint6",
+    "finger_l_joint7",
+    "finger_l_joint8",
+    "finger_l_joint9",
+    "finger_l_joint10",
+    "finger_l_joint11",
+    "finger_l_joint12",
+    "finger_l_joint13",
+    "finger_l_joint14",
+    "finger_l_joint15",
+    "finger_l_joint16",
+    "finger_l_joint17",
+    "finger_l_joint18",
+    "finger_l_joint19",
+    "finger_l_joint20",
+    "finger_r_joint1",
+    "finger_r_joint2",
+    "finger_r_joint3",
+    "finger_r_joint4",
+    "finger_r_joint5",
+    "finger_r_joint6",
+    "finger_r_joint7",
+    "finger_r_joint8",
+    "finger_r_joint9",
+    "finger_r_joint10",
+    "finger_r_joint11",
+    "finger_r_joint12",
+    "finger_r_joint13",
+    "finger_r_joint14",
+    "finger_r_joint15",
+    "finger_r_joint16",
+    "finger_r_joint17",
+    "finger_r_joint18",
+    "finger_r_joint19",
+    "finger_r_joint20",
+    "head_joint1",
+    "head_joint2",
+    "lift_joint",
+    "left_wheel_steer",
+    "right_wheel_steer",
+    "rear_wheel_steer",
+    "left_wheel_drive",
+    "right_wheel_drive",
+    "rear_wheel_drive"
+  ],
+  "joint_count": 63,
+  "joints": {
+    "arm_l_joint1": {
+      "prim_path": "/World/FFWSH5/Physics/arm_l_joint1",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -3.14,
+        "upper": 3.14,
+        "velocity": 4.8
+      },
+      "initial_position": 1.570717692375183,
+      "drive": {
+        "stiffness": 1000.0,
+        "damping": 100.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "arm_l_joint2": {
+      "prim_path": "/World/FFWSH5/Physics/arm_l_joint2",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2",
+      "type": "revolute",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -0.0,
+        "upper": 3.14,
+        "velocity": 4.8
+      },
+      "initial_position": 2.908846909122076e-05,
+      "drive": {
+        "stiffness": 1000.0,
+        "damping": 100.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "arm_l_joint3": {
+      "prim_path": "/World/FFWSH5/Physics/arm_l_joint3",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -3.14,
+        "upper": 3.14,
+        "velocity": 4.8
+      },
+      "initial_position": -6.946986104594544e-05,
+      "drive": {
+        "stiffness": 1000.0,
+        "damping": 100.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "arm_l_joint4": {
+      "prim_path": "/World/FFWSH5/Physics/arm_l_joint4",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -2.9361,
+        "upper": 1.0786,
+        "velocity": 4.8
+      },
+      "initial_position": -2.7989730834960938,
+      "drive": {
+        "stiffness": 1000.0,
+        "damping": 100.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "arm_l_joint5": {
+      "prim_path": "/World/FFWSH5/Physics/arm_l_joint5",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -3.14,
+        "upper": 3.14,
+        "velocity": 4.8
+      },
+      "initial_position": -0.001534760114736855,
+      "drive": {
+        "stiffness": 1000.0,
+        "damping": 100.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "arm_l_joint6": {
+      "prim_path": "/World/FFWSH5/Physics/arm_l_joint6",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -1.57,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": 0.0009957302827388048,
+      "drive": {
+        "stiffness": 1000.0,
+        "damping": 100.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "arm_l_joint7": {
+      "prim_path": "/World/FFWSH5/Physics/arm_l_joint7",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7",
+      "type": "revolute",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -1.8201,
+        "upper": 1.5804,
+        "velocity": 4.8
+      },
+      "initial_position": 0.0003286788414698094,
+      "drive": {
+        "stiffness": 1000.0,
+        "damping": 100.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "arm_r_joint1": {
+      "prim_path": "/World/FFWSH5/Physics/arm_r_joint1",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -3.14,
+        "upper": 3.14,
+        "velocity": 4.8
+      },
+      "initial_position": 1.5701746940612793,
+      "drive": {
+        "stiffness": 1000.0,
+        "damping": 100.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "arm_r_joint2": {
+      "prim_path": "/World/FFWSH5/Physics/arm_r_joint2",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2",
+      "type": "revolute",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -3.14,
+        "upper": 0.0,
+        "velocity": 4.8
+      },
+      "initial_position": -7.975521043590561e-07,
+      "drive": {
+        "stiffness": 1000.0,
+        "damping": 100.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "arm_r_joint3": {
+      "prim_path": "/World/FFWSH5/Physics/arm_r_joint3",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -3.14,
+        "upper": 3.14,
+        "velocity": 4.8
+      },
+      "initial_position": 0.00012524037447292358,
+      "drive": {
+        "stiffness": 1000.0,
+        "damping": 100.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "arm_r_joint4": {
+      "prim_path": "/World/FFWSH5/Physics/arm_r_joint4",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -2.9361,
+        "upper": 1.0786,
+        "velocity": 4.8
+      },
+      "initial_position": -2.7984046936035156,
+      "drive": {
+        "stiffness": 1000.0,
+        "damping": 100.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "arm_r_joint5": {
+      "prim_path": "/World/FFWSH5/Physics/arm_r_joint5",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -3.14,
+        "upper": 3.14,
+        "velocity": 4.8
+      },
+      "initial_position": 0.0015253612073138356,
+      "drive": {
+        "stiffness": 1000.0,
+        "damping": 100.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "arm_r_joint6": {
+      "prim_path": "/World/FFWSH5/Physics/arm_r_joint6",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -1.57,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": 0.0009513521217741072,
+      "drive": {
+        "stiffness": 1000.0,
+        "damping": 100.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "arm_r_joint7": {
+      "prim_path": "/World/FFWSH5/Physics/arm_r_joint7",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7",
+      "type": "revolute",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -1.5804,
+        "upper": 1.8201,
+        "velocity": 4.8
+      },
+      "initial_position": -0.00016239192336797714,
+      "drive": {
+        "stiffness": 1000.0,
+        "damping": 100.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_l_joint1": {
+      "prim_path": "/World/FFWSH5/Physics/finger_l_joint1",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link1",
+      "type": "revolute",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -1.57,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": -0.2739865481853485,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_l_joint2": {
+      "prim_path": "/World/FFWSH5/Physics/finger_l_joint2",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link1/finger_l_link2",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": 1.499009132385254,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_l_joint3": {
+      "prim_path": "/World/FFWSH5/Physics/finger_l_joint3",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link1/finger_l_link2/finger_l_link3",
+      "type": "revolute",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -1.57,
+        "upper": 0.0,
+        "velocity": 4.8
+      },
+      "initial_position": -0.45504194498062134,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_l_joint4": {
+      "prim_path": "/World/FFWSH5/Physics/finger_l_joint4",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link1/finger_l_link2/finger_l_link3/finger_l_link4",
+      "type": "revolute",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -1.57,
+        "upper": 0.0,
+        "velocity": 4.8
+      },
+      "initial_position": -0.09212926775217056,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_l_joint5": {
+      "prim_path": "/World/FFWSH5/Physics/finger_l_joint5",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link5",
+      "type": "revolute",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -0.6,
+        "upper": 0.6,
+        "velocity": 4.8
+      },
+      "initial_position": -0.061905086040496826,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_l_joint6": {
+      "prim_path": "/World/FFWSH5/Physics/finger_l_joint6",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link5/finger_l_link6",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 2.0,
+        "velocity": 4.8
+      },
+      "initial_position": 0.4969733953475952,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_l_joint7": {
+      "prim_path": "/World/FFWSH5/Physics/finger_l_joint7",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link5/finger_l_link6/finger_l_link7",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": 0.26017943024635315,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_l_joint8": {
+      "prim_path": "/World/FFWSH5/Physics/finger_l_joint8",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link5/finger_l_link6/finger_l_link7/finger_l_link8",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": 0.3186437487602234,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_l_joint9": {
+      "prim_path": "/World/FFWSH5/Physics/finger_l_joint9",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link9",
+      "type": "revolute",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -0.6,
+        "upper": 0.6,
+        "velocity": 4.8
+      },
+      "initial_position": -0.020414743572473526,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_l_joint10": {
+      "prim_path": "/World/FFWSH5/Physics/finger_l_joint10",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link9/finger_l_link10",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 2.0,
+        "velocity": 4.8
+      },
+      "initial_position": 0.5433523058891296,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_l_joint11": {
+      "prim_path": "/World/FFWSH5/Physics/finger_l_joint11",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link9/finger_l_link10/finger_l_link11",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": 0.2529889643192291,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_l_joint12": {
+      "prim_path": "/World/FFWSH5/Physics/finger_l_joint12",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link9/finger_l_link10/finger_l_link11/finger_l_link12",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": 0.2815844714641571,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_l_joint13": {
+      "prim_path": "/World/FFWSH5/Physics/finger_l_joint13",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link13",
+      "type": "revolute",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -0.6,
+        "upper": 0.6,
+        "velocity": 4.8
+      },
+      "initial_position": 0.021187027916312218,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_l_joint14": {
+      "prim_path": "/World/FFWSH5/Physics/finger_l_joint14",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link13/finger_l_link14",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 2.0,
+        "velocity": 4.8
+      },
+      "initial_position": 0.503585159778595,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_l_joint15": {
+      "prim_path": "/World/FFWSH5/Physics/finger_l_joint15",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link13/finger_l_link14/finger_l_link15",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": 0.26485997438430786,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_l_joint16": {
+      "prim_path": "/World/FFWSH5/Physics/finger_l_joint16",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link13/finger_l_link14/finger_l_link15/finger_l_link16",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": 0.3068687617778778,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_l_joint17": {
+      "prim_path": "/World/FFWSH5/Physics/finger_l_joint17",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link17",
+      "type": "revolute",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -0.6,
+        "upper": 0.6,
+        "velocity": 4.8
+      },
+      "initial_position": 0.06268630176782608,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_l_joint18": {
+      "prim_path": "/World/FFWSH5/Physics/finger_l_joint18",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link17/finger_l_link18",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 2.0,
+        "velocity": 4.8
+      },
+      "initial_position": 0.406111478805542,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_l_joint19": {
+      "prim_path": "/World/FFWSH5/Physics/finger_l_joint19",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link17/finger_l_link18/finger_l_link19",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": 0.2525913119316101,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_l_joint20": {
+      "prim_path": "/World/FFWSH5/Physics/finger_l_joint20",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link17/finger_l_link18/finger_l_link19/finger_l_link20",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": 0.36337560415267944,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_r_joint1": {
+      "prim_path": "/World/FFWSH5/Physics/finger_r_joint1",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link1",
+      "type": "revolute",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -1.57,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": 0.143804132938385,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_r_joint2": {
+      "prim_path": "/World/FFWSH5/Physics/finger_r_joint2",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link1/finger_r_link2",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -1.57,
+        "upper": 0.0,
+        "velocity": 4.8
+      },
+      "initial_position": -1.4992872476577759,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_r_joint3": {
+      "prim_path": "/World/FFWSH5/Physics/finger_r_joint3",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link1/finger_r_link2/finger_r_link3",
+      "type": "revolute",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": 0.20529255270957947,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_r_joint4": {
+      "prim_path": "/World/FFWSH5/Physics/finger_r_joint4",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link1/finger_r_link2/finger_r_link3/finger_r_link4",
+      "type": "revolute",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": 0.04186459630727768,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_r_joint5": {
+      "prim_path": "/World/FFWSH5/Physics/finger_r_joint5",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link5",
+      "type": "revolute",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -0.6,
+        "upper": 0.6,
+        "velocity": 4.8
+      },
+      "initial_position": 0.03197697177529335,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_r_joint6": {
+      "prim_path": "/World/FFWSH5/Physics/finger_r_joint6",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link5/finger_r_link6",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 2.0,
+        "velocity": 4.8
+      },
+      "initial_position": 0.2348945587873459,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_r_joint7": {
+      "prim_path": "/World/FFWSH5/Physics/finger_r_joint7",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link5/finger_r_link6/finger_r_link7",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": 0.12105076760053635,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_r_joint8": {
+      "prim_path": "/World/FFWSH5/Physics/finger_r_joint8",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link5/finger_r_link6/finger_r_link7/finger_r_link8",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": 0.15202131867408752,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_r_joint9": {
+      "prim_path": "/World/FFWSH5/Physics/finger_r_joint9",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link9",
+      "type": "revolute",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -0.6,
+        "upper": 0.6,
+        "velocity": 4.8
+      },
+      "initial_position": 0.010437247343361378,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_r_joint10": {
+      "prim_path": "/World/FFWSH5/Physics/finger_r_joint10",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link9/finger_r_link10",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 2.0,
+        "velocity": 4.8
+      },
+      "initial_position": 0.25593671202659607,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_r_joint11": {
+      "prim_path": "/World/FFWSH5/Physics/finger_r_joint11",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link9/finger_r_link10/finger_r_link11",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": 0.1164238452911377,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_r_joint12": {
+      "prim_path": "/World/FFWSH5/Physics/finger_r_joint12",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link9/finger_r_link10/finger_r_link11/finger_r_link12",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": 0.1303328275680542,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_r_joint13": {
+      "prim_path": "/World/FFWSH5/Physics/finger_r_joint13",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link13",
+      "type": "revolute",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -0.6,
+        "upper": 0.6,
+        "velocity": 4.8
+      },
+      "initial_position": -0.010982289910316467,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_r_joint14": {
+      "prim_path": "/World/FFWSH5/Physics/finger_r_joint14",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link13/finger_r_link14",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 2.0,
+        "velocity": 4.8
+      },
+      "initial_position": 0.23541465401649475,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_r_joint15": {
+      "prim_path": "/World/FFWSH5/Physics/finger_r_joint15",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link13/finger_r_link14/finger_r_link15",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": 0.12362294644117355,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_r_joint16": {
+      "prim_path": "/World/FFWSH5/Physics/finger_r_joint16",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link13/finger_r_link14/finger_r_link15/finger_r_link16",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": 0.14288507401943207,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_r_joint17": {
+      "prim_path": "/World/FFWSH5/Physics/finger_r_joint17",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link17",
+      "type": "revolute",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -0.6,
+        "upper": 0.6,
+        "velocity": 4.8
+      },
+      "initial_position": -0.03260428085923195,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_r_joint18": {
+      "prim_path": "/World/FFWSH5/Physics/finger_r_joint18",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link17/finger_r_link18",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 2.0,
+        "velocity": 4.8
+      },
+      "initial_position": 0.1904648393392563,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_r_joint19": {
+      "prim_path": "/World/FFWSH5/Physics/finger_r_joint19",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link17/finger_r_link18/finger_r_link19",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": 0.11697522550821304,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "finger_r_joint20": {
+      "prim_path": "/World/FFWSH5/Physics/finger_r_joint20",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link17/finger_r_link18/finger_r_link19/finger_r_link20",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": 0.0,
+        "upper": 1.57,
+        "velocity": 4.8
+      },
+      "initial_position": 0.1724877506494522,
+      "drive": {
+        "stiffness": 320.0,
+        "damping": 8.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "head_joint1": {
+      "prim_path": "/World/FFWSH5/Physics/head_joint1",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/head_link1",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -0.2317,
+        "upper": 0.6951,
+        "velocity": 4.8
+      },
+      "initial_position": 0.6863727569580078,
+      "drive": {
+        "stiffness": 300.0,
+        "damping": 30.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "head_joint2": {
+      "prim_path": "/World/FFWSH5/Physics/head_joint2",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/head_link1/head_link2",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -0.35,
+        "upper": 0.35,
+        "velocity": 4.8
+      },
+      "initial_position": 1.1809413990704343e-05,
+      "drive": {
+        "stiffness": 300.0,
+        "damping": 30.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "lift_joint": {
+      "prim_path": "/World/FFWSH5/Physics/lift_joint",
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link",
+      "type": "prismatic",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": {
+        "effort": 1000.0,
+        "lower": -0.5,
+        "upper": 0.0,
+        "velocity": 4.8
+      },
+      "initial_position": -0.005598837044090033,
+      "drive": {
+        "stiffness": 100000.0,
+        "damping": 4000.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 1000.0
+      }
+    },
+    "left_wheel_steer": {
+      "prim_path": "/World/FFWSH5/Physics/left_wheel_steer",
+      "body_path": "/World/FFWSH5/Geometry/base_link/left_wheel_steer_link",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": {
+        "effort": 9999.0,
+        "lower": -18.84955592153876,
+        "upper": 18.84955592153876,
+        "velocity": 9999.0
+      },
+      "initial_position": 0.0,
+      "drive": {
+        "stiffness": 2000.0,
+        "damping": 200.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 9999.0
+      }
+    },
+    "right_wheel_steer": {
+      "prim_path": "/World/FFWSH5/Physics/right_wheel_steer",
+      "body_path": "/World/FFWSH5/Geometry/base_link/right_wheel_steer_link",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": {
+        "effort": 9999.0,
+        "lower": -18.84955592153876,
+        "upper": 18.84955592153876,
+        "velocity": 9999.0
+      },
+      "initial_position": 0.0,
+      "drive": {
+        "stiffness": 2000.0,
+        "damping": 200.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 9999.0
+      }
+    },
+    "rear_wheel_steer": {
+      "prim_path": "/World/FFWSH5/Physics/rear_wheel_steer",
+      "body_path": "/World/FFWSH5/Geometry/base_link/rear_wheel_steer_link",
+      "type": "revolute",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits": {
+        "effort": 9999.0,
+        "lower": -18.84955592153876,
+        "upper": 18.84955592153876,
+        "velocity": 9999.0
+      },
+      "initial_position": 0.0,
+      "drive": {
+        "stiffness": 2000.0,
+        "damping": 200.0,
+        "mode": "position",
+        "type": "force",
+        "max_force": 9999.0
+      }
+    },
+    "left_wheel_drive": {
+      "prim_path": "/World/FFWSH5/Physics/left_wheel_drive",
+      "body_path": "/World/FFWSH5/Geometry/base_link/left_wheel_steer_link/left_wheel_drive_link",
+      "type": "continuous",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 9999.0,
+        "velocity": 9999.0
+      },
+      "initial_position": 0.0,
+      "drive": {
+        "stiffness": 0.0,
+        "damping": 80.0,
+        "mode": "velocity",
+        "type": "force",
+        "max_force": 9999.0
+      }
+    },
+    "right_wheel_drive": {
+      "prim_path": "/World/FFWSH5/Physics/right_wheel_drive",
+      "body_path": "/World/FFWSH5/Geometry/base_link/right_wheel_steer_link/right_wheel_drive_link",
+      "type": "continuous",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 9999.0,
+        "velocity": 9999.0
+      },
+      "initial_position": 0.0,
+      "drive": {
+        "stiffness": 0.0,
+        "damping": 80.0,
+        "mode": "velocity",
+        "type": "force",
+        "max_force": 9999.0
+      }
+    },
+    "rear_wheel_drive": {
+      "prim_path": "/World/FFWSH5/Physics/rear_wheel_drive",
+      "body_path": "/World/FFWSH5/Geometry/base_link/rear_wheel_steer_link/rear_wheel_drive_link",
+      "type": "continuous",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits": {
+        "effort": 9999.0,
+        "velocity": 9999.0
+      },
+      "initial_position": 0.0,
+      "drive": {
+        "stiffness": 0.0,
+        "damping": 80.0,
+        "mode": "velocity",
+        "type": "force",
+        "max_force": 9999.0
+      }
+    }
+  },
+  "cameras": {
+    "head_left": {
+      "model": "ZED Mini",
+      "calibration_kind": "manufacturer_nominal_rectified",
+      "source_url": "https://support.stereolabs.com/hc/en-us/articles/360007395634-What-is-the-camera-focal-length-and-field-of-view",
+      "stereo_baseline_m": 0.063,
+      "projection_tx": 0.0,
+      "resolution": [
+        672,
+        376
+      ],
+      "frequency_hz": 30,
+      "jpeg_quality": 95,
+      "jpeg_subsampling": 0,
+      "fx": 367.0,
+      "fy": 367.0,
+      "cx": 336.0,
+      "cy": 188.0,
+      "focal_length_mm": 2.936,
+      "horizontal_aperture_mm": 5.376,
+      "vertical_aperture_mm": 3.008,
+      "prim_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/head_link1/head_link2/HX5Sensors/zedm_left_camera_optical_frame/Camera",
+      "mount_body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/head_link1/head_link2",
+      "source_link": "zedm_left_camera_optical_frame",
+      "optical_frame": "zedm_left_camera_optical_frame",
+      "image_topic": "/zed/zed_node/left/image_rect_color",
+      "mount_xyz": [
+        0.0238122,
+        0.024982030000000002,
+        -0.0109594
+      ],
+      "mount_quat_wxyz": [
+        0.5000000000024483,
+        -0.5,
+        0.4999999999975517,
+        -0.5
+      ],
+      "optical_frame_in_source_urdf": true
+    },
+    "head_right": {
+      "model": "ZED Mini",
+      "calibration_kind": "manufacturer_nominal_rectified",
+      "source_url": "https://support.stereolabs.com/hc/en-us/articles/360007395634-What-is-the-camera-focal-length-and-field-of-view",
+      "stereo_baseline_m": 0.063,
+      "projection_tx": -23.121,
+      "resolution": [
+        672,
+        376
+      ],
+      "frequency_hz": 30,
+      "jpeg_quality": 95,
+      "jpeg_subsampling": 0,
+      "fx": 367.0,
+      "fy": 367.0,
+      "cx": 336.0,
+      "cy": 188.0,
+      "focal_length_mm": 2.936,
+      "horizontal_aperture_mm": 5.376,
+      "vertical_aperture_mm": 3.008,
+      "prim_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/head_link1/head_link2/HX5Sensors/zedm_right_camera_optical_frame/Camera",
+      "mount_body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/head_link1/head_link2",
+      "source_link": "zedm_right_camera_optical_frame",
+      "optical_frame": "zedm_right_camera_optical_frame",
+      "image_topic": "/zed/zed_node/right/image_rect_color",
+      "mount_xyz": [
+        0.0238122,
+        -0.03801797,
+        -0.0109594
+      ],
+      "mount_quat_wxyz": [
+        0.5000000000024483,
+        -0.5,
+        0.4999999999975517,
+        -0.5
+      ],
+      "optical_frame_in_source_urdf": true
+    },
+    "wrist_left": {
+      "model": "RealSense D405",
+      "calibration_kind": "nominal_pinhole",
+      "source_url": "https://www.realsenseai.com/product-family/d405-series/",
+      "projection_tx": 0.0,
+      "resolution": [
+        424,
+        240
+      ],
+      "frequency_hz": 30,
+      "jpeg_quality": 95,
+      "jpeg_subsampling": 0,
+      "fx": 223.40138655956403,
+      "fy": 216.48573063257084,
+      "cx": 212.0,
+      "cy": 120.0,
+      "focal_length_mm": 3.0,
+      "horizontal_aperture_mm": 5.693787400289278,
+      "vertical_aperture_mm": 3.325854308716614,
+      "prim_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/HX5Sensors/camera_l_color_optical_frame/Camera",
+      "mount_body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7",
+      "source_link": "camera_l_link",
+      "optical_frame": "camera_l_color_optical_frame",
+      "image_topic": "/camera_left/camera_left/color/image_rect_raw",
+      "mount_xyz": [
+        0.09787329393989058,
+        4.407260147110126e-14,
+        -0.07627194253304001
+      ],
+      "mount_quat_wxyz": [
+        -1.172950625516478e-13,
+        -0.9988483864841011,
+        2.4455437674930636e-12,
+        0.04797812853903127
+      ],
+      "optical_frame_in_source_urdf": false
+    },
+    "wrist_right": {
+      "model": "RealSense D405",
+      "calibration_kind": "nominal_pinhole",
+      "source_url": "https://www.realsenseai.com/product-family/d405-series/",
+      "projection_tx": 0.0,
+      "resolution": [
+        424,
+        240
+      ],
+      "frequency_hz": 30,
+      "jpeg_quality": 95,
+      "jpeg_subsampling": 0,
+      "fx": 223.40138655956403,
+      "fy": 216.48573063257084,
+      "cx": 212.0,
+      "cy": 120.0,
+      "focal_length_mm": 3.0,
+      "horizontal_aperture_mm": 5.693787400289278,
+      "vertical_aperture_mm": 3.325854308716614,
+      "prim_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/HX5Sensors/camera_r_color_optical_frame/Camera",
+      "mount_body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7",
+      "source_link": "camera_r_link",
+      "optical_frame": "camera_r_color_optical_frame",
+      "image_topic": "/camera_right/camera_right/color/image_rect_raw",
+      "mount_xyz": [
+        0.09787329393989058,
+        4.407260147110126e-14,
+        -0.07627194253304001
+      ],
+      "mount_quat_wxyz": [
+        -1.172950625516478e-13,
+        -0.9988483864841011,
+        2.4455437674930636e-12,
+        0.04797812853903127
+      ],
+      "optical_frame_in_source_urdf": false
+    }
+  },
+  "contact_tips": {
+    "finger_l_sensor1": {
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link1/finger_l_link2/finger_l_link3/finger_l_link4",
+      "rigid_body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link1/finger_l_link2/finger_l_link3/finger_l_link4",
+      "frame_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link1/finger_l_link2/finger_l_link3/finger_l_link4/HX5ContactFrame",
+      "source_tip_link": "finger_end_l_link1",
+      "taxel_translation": [
+        0.0,
+        -0.03975,
+        0.0
+      ],
+      "taxel_orientation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "collider_paths": [
+        "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link1/finger_l_link2/finger_l_link3/finger_l_link4/finger_l_link4/hx5_d20_thumb_tip"
+      ],
+      "taxel_layout": "3x3",
+      "calibration": "simulation contact impulse; no hardware pressure calibration"
+    },
+    "finger_l_sensor2": {
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link5/finger_l_link6/finger_l_link7/finger_l_link8",
+      "rigid_body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link5/finger_l_link6/finger_l_link7/finger_l_link8",
+      "frame_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link5/finger_l_link6/finger_l_link7/finger_l_link8/HX5ContactFrame",
+      "source_tip_link": "finger_end_l_link2",
+      "taxel_translation": [
+        0.0,
+        0.0,
+        0.02425
+      ],
+      "taxel_orientation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "collider_paths": [
+        "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link5/finger_l_link6/finger_l_link7/finger_l_link8/finger_l_link8/hx5_d20_finger_tip"
+      ],
+      "taxel_layout": "3x3",
+      "calibration": "simulation contact impulse; no hardware pressure calibration"
+    },
+    "finger_l_sensor3": {
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link9/finger_l_link10/finger_l_link11/finger_l_link12",
+      "rigid_body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link9/finger_l_link10/finger_l_link11/finger_l_link12",
+      "frame_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link9/finger_l_link10/finger_l_link11/finger_l_link12/HX5ContactFrame",
+      "source_tip_link": "finger_end_l_link3",
+      "taxel_translation": [
+        0.0,
+        0.0,
+        0.02425
+      ],
+      "taxel_orientation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "collider_paths": [
+        "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link9/finger_l_link10/finger_l_link11/finger_l_link12/finger_l_link12/hx5_d20_finger_tip"
+      ],
+      "taxel_layout": "3x3",
+      "calibration": "simulation contact impulse; no hardware pressure calibration"
+    },
+    "finger_l_sensor4": {
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link13/finger_l_link14/finger_l_link15/finger_l_link16",
+      "rigid_body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link13/finger_l_link14/finger_l_link15/finger_l_link16",
+      "frame_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link13/finger_l_link14/finger_l_link15/finger_l_link16/HX5ContactFrame",
+      "source_tip_link": "finger_end_l_link4",
+      "taxel_translation": [
+        0.0,
+        0.0,
+        0.02425
+      ],
+      "taxel_orientation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "collider_paths": [
+        "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link13/finger_l_link14/finger_l_link15/finger_l_link16/finger_l_link16/hx5_d20_finger_tip"
+      ],
+      "taxel_layout": "3x3",
+      "calibration": "simulation contact impulse; no hardware pressure calibration"
+    },
+    "finger_l_sensor5": {
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link17/finger_l_link18/finger_l_link19/finger_l_link20",
+      "rigid_body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link17/finger_l_link18/finger_l_link19/finger_l_link20",
+      "frame_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link17/finger_l_link18/finger_l_link19/finger_l_link20/HX5ContactFrame",
+      "source_tip_link": "finger_end_l_link5",
+      "taxel_translation": [
+        0.0,
+        0.0,
+        0.02425
+      ],
+      "taxel_orientation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "collider_paths": [
+        "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link17/finger_l_link18/finger_l_link19/finger_l_link20/finger_l_link20/hx5_d20_finger_tip"
+      ],
+      "taxel_layout": "3x3",
+      "calibration": "simulation contact impulse; no hardware pressure calibration"
+    },
+    "finger_r_sensor1": {
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link1/finger_r_link2/finger_r_link3/finger_r_link4",
+      "rigid_body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link1/finger_r_link2/finger_r_link3/finger_r_link4",
+      "frame_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link1/finger_r_link2/finger_r_link3/finger_r_link4/HX5ContactFrame",
+      "source_tip_link": "finger_end_r_link1",
+      "taxel_translation": [
+        0.0,
+        0.03975,
+        0.0
+      ],
+      "taxel_orientation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "collider_paths": [
+        "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link1/finger_r_link2/finger_r_link3/finger_r_link4/finger_r_link4/hx5_d20_thumb_tip_1"
+      ],
+      "taxel_layout": "3x3",
+      "calibration": "simulation contact impulse; no hardware pressure calibration"
+    },
+    "finger_r_sensor2": {
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link5/finger_r_link6/finger_r_link7/finger_r_link8",
+      "rigid_body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link5/finger_r_link6/finger_r_link7/finger_r_link8",
+      "frame_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link5/finger_r_link6/finger_r_link7/finger_r_link8/HX5ContactFrame",
+      "source_tip_link": "finger_end_r_link2",
+      "taxel_translation": [
+        0.0,
+        0.0,
+        0.02425
+      ],
+      "taxel_orientation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "collider_paths": [
+        "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link5/finger_r_link6/finger_r_link7/finger_r_link8/finger_r_link8/hx5_d20_finger_tip"
+      ],
+      "taxel_layout": "3x3",
+      "calibration": "simulation contact impulse; no hardware pressure calibration"
+    },
+    "finger_r_sensor3": {
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link9/finger_r_link10/finger_r_link11/finger_r_link12",
+      "rigid_body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link9/finger_r_link10/finger_r_link11/finger_r_link12",
+      "frame_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link9/finger_r_link10/finger_r_link11/finger_r_link12/HX5ContactFrame",
+      "source_tip_link": "finger_end_r_link3",
+      "taxel_translation": [
+        0.0,
+        0.0,
+        0.02425
+      ],
+      "taxel_orientation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "collider_paths": [
+        "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link9/finger_r_link10/finger_r_link11/finger_r_link12/finger_r_link12/hx5_d20_finger_tip"
+      ],
+      "taxel_layout": "3x3",
+      "calibration": "simulation contact impulse; no hardware pressure calibration"
+    },
+    "finger_r_sensor4": {
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link13/finger_r_link14/finger_r_link15/finger_r_link16",
+      "rigid_body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link13/finger_r_link14/finger_r_link15/finger_r_link16",
+      "frame_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link13/finger_r_link14/finger_r_link15/finger_r_link16/HX5ContactFrame",
+      "source_tip_link": "finger_end_r_link4",
+      "taxel_translation": [
+        0.0,
+        0.0,
+        0.02425
+      ],
+      "taxel_orientation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "collider_paths": [
+        "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link13/finger_r_link14/finger_r_link15/finger_r_link16/finger_r_link16/hx5_d20_finger_tip"
+      ],
+      "taxel_layout": "3x3",
+      "calibration": "simulation contact impulse; no hardware pressure calibration"
+    },
+    "finger_r_sensor5": {
+      "body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link17/finger_r_link18/finger_r_link19/finger_r_link20",
+      "rigid_body_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link17/finger_r_link18/finger_r_link19/finger_r_link20",
+      "frame_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link17/finger_r_link18/finger_r_link19/finger_r_link20/HX5ContactFrame",
+      "source_tip_link": "finger_end_r_link5",
+      "taxel_translation": [
+        0.0,
+        0.0,
+        0.02425
+      ],
+      "taxel_orientation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "collider_paths": [
+        "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link17/finger_r_link18/finger_r_link19/finger_r_link20/finger_r_link20/hx5_d20_finger_tip"
+      ],
+      "taxel_layout": "3x3",
+      "calibration": "simulation contact impulse; no hardware pressure calibration"
+    }
+  },
+  "head_camera_visual_apertures": [
+    {
+      "visual_mesh_path": "/World/FFWSH5/Geometry/base_link/arm_base_link/head_link1/head_link2/head_link2/head_link2",
+      "original_triangles": 8114,
+      "intersected_triangles": 716,
+      "result_triangles": 9868
+    }
+  ],
+  "dynamic_objects": [
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_001",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_001/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_002",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_002/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_003",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_003/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_004",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_004/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_005",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_005/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_006",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_006/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_007",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_007/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_008",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_008/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_009",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_009/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_010",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_010/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_011",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_011/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_012",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_012/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_013",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_013/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_014",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_014/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_015",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_015/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_016",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_016/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_017",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_017/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_018",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_018/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_019",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_019/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_020",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_020/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_021",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_021/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_022",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_022/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_023",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_023/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_024",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_024/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_025",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_025/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_026",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_026/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_027",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_027/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_028",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_028/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_029",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_029/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_030",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_030/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_031",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_031/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_032",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_032/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_033",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_033/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_034",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_034/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_035",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_035/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_036",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_036/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_037",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_037/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_038",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_038/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_039",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_039/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_03/Contents/object1_040",
+      "kind": "object1",
+      "mass_kg": 0.08,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_03/Contents/object1_040/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_001",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_001/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_002",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_002/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_003",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_003/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_004",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_004/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_005",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_005/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_006",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_006/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_007",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_007/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_008",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_008/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_009",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_009/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_010",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_010/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_011",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_011/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_012",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_012/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_013",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_013/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_014",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_014/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_015",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_015/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_016",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_016/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_017",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_017/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_018",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_018/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_019",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_019/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_020",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_020/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_021",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_021/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_022",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_022/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_023",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_023/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_024",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_024/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_025",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_025/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_026",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_026/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_027",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_027/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_028",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_028/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_029",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_029/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_030",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_030/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_031",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_031/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    },
+    {
+      "prim_path": "/World/ConveyorBaskets/Basket_04/Contents/object2_032",
+      "kind": "object2",
+      "mass_kg": 0.05,
+      "collider_paths": [
+        "/World/ConveyorBaskets/Basket_04/Contents/object2_032/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh"
+      ]
+    }
+  ],
+  "dynamic_object_count": 72,
+  "payload_collision_model": "convexHull256",
+  "basket_collision_model": "open_five_box_settling_proxy",
+  "basket_collider_prim_paths": [
+    "/World/ConveyorBaskets/Basket_01/HX5BasketColliders/Floor",
+    "/World/ConveyorBaskets/Basket_01/HX5BasketColliders/WallX0",
+    "/World/ConveyorBaskets/Basket_01/HX5BasketColliders/WallX2",
+    "/World/ConveyorBaskets/Basket_01/HX5BasketColliders/WallY0",
+    "/World/ConveyorBaskets/Basket_01/HX5BasketColliders/WallY2",
+    "/World/ConveyorBaskets/Basket_02/HX5BasketColliders/Floor",
+    "/World/ConveyorBaskets/Basket_02/HX5BasketColliders/WallX0",
+    "/World/ConveyorBaskets/Basket_02/HX5BasketColliders/WallX2",
+    "/World/ConveyorBaskets/Basket_02/HX5BasketColliders/WallY0",
+    "/World/ConveyorBaskets/Basket_02/HX5BasketColliders/WallY2",
+    "/World/ConveyorBaskets/Basket_03/HX5BasketColliders/Floor",
+    "/World/ConveyorBaskets/Basket_03/HX5BasketColliders/WallX0",
+    "/World/ConveyorBaskets/Basket_03/HX5BasketColliders/WallX2",
+    "/World/ConveyorBaskets/Basket_03/HX5BasketColliders/WallY0",
+    "/World/ConveyorBaskets/Basket_03/HX5BasketColliders/WallY2",
+    "/World/ConveyorBaskets/Basket_04/HX5BasketColliders/Floor",
+    "/World/ConveyorBaskets/Basket_04/HX5BasketColliders/WallX0",
+    "/World/ConveyorBaskets/Basket_04/HX5BasketColliders/WallX2",
+    "/World/ConveyorBaskets/Basket_04/HX5BasketColliders/WallY0",
+    "/World/ConveyorBaskets/Basket_04/HX5BasketColliders/WallY2",
+    "/World/StorageDeck/Shelf0/Basket_01/HX5BasketColliders/Floor",
+    "/World/StorageDeck/Shelf0/Basket_01/HX5BasketColliders/WallX0",
+    "/World/StorageDeck/Shelf0/Basket_01/HX5BasketColliders/WallX2",
+    "/World/StorageDeck/Shelf0/Basket_01/HX5BasketColliders/WallY0",
+    "/World/StorageDeck/Shelf0/Basket_01/HX5BasketColliders/WallY2",
+    "/World/StorageDeck/Shelf0/Basket_02/HX5BasketColliders/Floor",
+    "/World/StorageDeck/Shelf0/Basket_02/HX5BasketColliders/WallX0",
+    "/World/StorageDeck/Shelf0/Basket_02/HX5BasketColliders/WallX2",
+    "/World/StorageDeck/Shelf0/Basket_02/HX5BasketColliders/WallY0",
+    "/World/StorageDeck/Shelf0/Basket_02/HX5BasketColliders/WallY2",
+    "/World/StorageDeck/Shelf0/Basket_03/HX5BasketColliders/Floor",
+    "/World/StorageDeck/Shelf0/Basket_03/HX5BasketColliders/WallX0",
+    "/World/StorageDeck/Shelf0/Basket_03/HX5BasketColliders/WallX2",
+    "/World/StorageDeck/Shelf0/Basket_03/HX5BasketColliders/WallY0",
+    "/World/StorageDeck/Shelf0/Basket_03/HX5BasketColliders/WallY2",
+    "/World/StorageDeck/Shelf0/Basket_04/HX5BasketColliders/Floor",
+    "/World/StorageDeck/Shelf0/Basket_04/HX5BasketColliders/WallX0",
+    "/World/StorageDeck/Shelf0/Basket_04/HX5BasketColliders/WallX2",
+    "/World/StorageDeck/Shelf0/Basket_04/HX5BasketColliders/WallY0",
+    "/World/StorageDeck/Shelf0/Basket_04/HX5BasketColliders/WallY2",
+    "/World/StorageDeck/Shelf1/Basket_01/HX5BasketColliders/Floor",
+    "/World/StorageDeck/Shelf1/Basket_01/HX5BasketColliders/WallX0",
+    "/World/StorageDeck/Shelf1/Basket_01/HX5BasketColliders/WallX2",
+    "/World/StorageDeck/Shelf1/Basket_01/HX5BasketColliders/WallY0",
+    "/World/StorageDeck/Shelf1/Basket_01/HX5BasketColliders/WallY2",
+    "/World/StorageDeck/Shelf1/Basket_02/HX5BasketColliders/Floor",
+    "/World/StorageDeck/Shelf1/Basket_02/HX5BasketColliders/WallX0",
+    "/World/StorageDeck/Shelf1/Basket_02/HX5BasketColliders/WallX2",
+    "/World/StorageDeck/Shelf1/Basket_02/HX5BasketColliders/WallY0",
+    "/World/StorageDeck/Shelf1/Basket_02/HX5BasketColliders/WallY2",
+    "/World/StorageDeck/Shelf1/Basket_03/HX5BasketColliders/Floor",
+    "/World/StorageDeck/Shelf1/Basket_03/HX5BasketColliders/WallX0",
+    "/World/StorageDeck/Shelf1/Basket_03/HX5BasketColliders/WallX2",
+    "/World/StorageDeck/Shelf1/Basket_03/HX5BasketColliders/WallY0",
+    "/World/StorageDeck/Shelf1/Basket_03/HX5BasketColliders/WallY2",
+    "/World/StorageDeck/Shelf1/Basket_04/HX5BasketColliders/Floor",
+    "/World/StorageDeck/Shelf1/Basket_04/HX5BasketColliders/WallX0",
+    "/World/StorageDeck/Shelf1/Basket_04/HX5BasketColliders/WallX2",
+    "/World/StorageDeck/Shelf1/Basket_04/HX5BasketColliders/WallY0",
+    "/World/StorageDeck/Shelf1/Basket_04/HX5BasketColliders/WallY2"
+  ],
+  "physics_hz": 120,
+  "floor_friction": 1.0,
+  "spawn": [
+    0.3602113127708435,
+    -0.7280516624450684,
+    1.4901161193847656e-07,
+    90.06368406375174
+  ],
+  "robot_spawn": {
+    "position": [
+      0.3602113127708435,
+      -0.7280516624450684,
+      1.4901161193847656e-07
+    ],
+    "orientation_wxyz": [
+      0.7067136986203583,
+      7.26431508450977e-08,
+      4.656612233660109e-08,
+      0.7074996453584452
+    ]
+  },
+  "dynamic_object_prim_paths": [
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_001",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_002",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_003",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_004",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_005",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_006",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_007",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_008",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_009",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_010",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_011",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_012",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_013",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_014",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_015",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_016",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_017",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_018",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_019",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_020",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_021",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_022",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_023",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_024",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_025",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_026",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_027",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_028",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_029",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_030",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_031",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_032",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_033",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_034",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_035",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_036",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_037",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_038",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_039",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_040",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_001",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_002",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_003",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_004",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_005",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_006",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_007",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_008",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_009",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_010",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_011",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_012",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_013",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_014",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_015",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_016",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_017",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_018",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_019",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_020",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_021",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_022",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_023",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_024",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_025",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_026",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_027",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_028",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_029",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_030",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_031",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_032"
+  ],
+  "robot_collider_prim_paths": [
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/head_link1/head_link2/head_link2_1/head_link2",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/head_link1/head_link1_1/head_link1",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link1/finger_l_link2/finger_l_link3/finger_l_link4/finger_l_link4/hx5_d20_thumb_tip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link1/finger_l_link2/finger_l_link3/hx5_d20_thumb_ip_1/hx5_d20_thumb_ip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link1/finger_l_link2/hx5_d20_thumb_mcp2_1/hx5_d20_thumb_mcp2",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link1/hx5_d20_thumb_mcp_1/hx5_d20_thumb_mcp",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link5/finger_l_link6/finger_l_link7/finger_l_link8/finger_l_link8/hx5_d20_finger_tip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link5/finger_l_link6/finger_l_link7/hx5_d20_finger_dip_1/hx5_d20_finger_dip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link5/finger_l_link6/hx5_d20_finger_pip_1/hx5_d20_finger_pip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link5/hx5_d20_finger_mcp_1/hx5_d20_finger_mcp",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link9/finger_l_link10/finger_l_link11/finger_l_link12/finger_l_link12/hx5_d20_finger_tip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link9/finger_l_link10/finger_l_link11/hx5_d20_finger_dip_1/hx5_d20_finger_dip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link9/finger_l_link10/hx5_d20_finger_pip_1/hx5_d20_finger_pip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link9/hx5_d20_finger_mcp_1/hx5_d20_finger_mcp",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link13/finger_l_link14/finger_l_link15/finger_l_link16/finger_l_link16/hx5_d20_finger_tip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link13/finger_l_link14/finger_l_link15/hx5_d20_finger_dip_1/hx5_d20_finger_dip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link13/finger_l_link14/hx5_d20_finger_pip_1/hx5_d20_finger_pip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link13/hx5_d20_finger_mcp_1/hx5_d20_finger_mcp",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link17/finger_l_link18/finger_l_link19/finger_l_link20/finger_l_link20/hx5_d20_finger_tip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link17/finger_l_link18/finger_l_link19/hx5_d20_finger_dip_1/hx5_d20_finger_dip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link17/finger_l_link18/hx5_d20_finger_pip_1/hx5_d20_finger_pip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/finger_l_link17/hx5_d20_finger_mcp_1/hx5_d20_finger_mcp",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/arm_l_link7_1/arm_l_link7",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/box",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link7/hx5_d20_base_unit_1/hx5_d20_base_unit",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link6/arm_l_link6_1/arm_l_link6",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link5/arm_l_link5_1/arm_l_link5",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link4/arm_l_link4_1/arm_l_link4",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link3/arm_l_link3_1/arm_l_link3",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link2/arm_l_link2_1/arm_l_link2",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_l_link1/arm_l_link1_1/arm_l_link1",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link1/finger_r_link2/finger_r_link3/finger_r_link4/finger_r_link4/hx5_d20_thumb_tip_1",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link1/finger_r_link2/finger_r_link3/hx5_d20_thumb_ip_1/hx5_d20_thumb_ip_1",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link1/finger_r_link2/hx5_d20_thumb_mcp2_1/hx5_d20_thumb_mcp2_1",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link1/hx5_d20_thumb_mcp_1/hx5_d20_thumb_mcp_1",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link5/finger_r_link6/finger_r_link7/finger_r_link8/finger_r_link8/hx5_d20_finger_tip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link5/finger_r_link6/finger_r_link7/hx5_d20_finger_dip_1/hx5_d20_finger_dip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link5/finger_r_link6/hx5_d20_finger_pip_1/hx5_d20_finger_pip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link5/hx5_d20_finger_mcp_1/hx5_d20_finger_mcp",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link9/finger_r_link10/finger_r_link11/finger_r_link12/finger_r_link12/hx5_d20_finger_tip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link9/finger_r_link10/finger_r_link11/hx5_d20_finger_dip_1/hx5_d20_finger_dip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link9/finger_r_link10/hx5_d20_finger_pip_1/hx5_d20_finger_pip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link9/hx5_d20_finger_mcp_1/hx5_d20_finger_mcp",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link13/finger_r_link14/finger_r_link15/finger_r_link16/finger_r_link16/hx5_d20_finger_tip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link13/finger_r_link14/finger_r_link15/hx5_d20_finger_dip_1/hx5_d20_finger_dip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link13/finger_r_link14/hx5_d20_finger_pip_1/hx5_d20_finger_pip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link13/hx5_d20_finger_mcp_1/hx5_d20_finger_mcp",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link17/finger_r_link18/finger_r_link19/finger_r_link20/finger_r_link20/hx5_d20_finger_tip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link17/finger_r_link18/finger_r_link19/hx5_d20_finger_dip_1/hx5_d20_finger_dip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link17/finger_r_link18/hx5_d20_finger_pip_1/hx5_d20_finger_pip",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/finger_r_link17/hx5_d20_finger_mcp_1/hx5_d20_finger_mcp",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/arm_r_link7_1/arm_r_link7",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/box",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link7/hx5_d20_base_unit_1/hx5_d20_base_unit_1",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link6/arm_r_link6_1/arm_r_link6",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link5/arm_r_link5_1/arm_r_link5",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link4/arm_r_link4_1/arm_r_link4",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link3/arm_r_link3_1/arm_r_link3",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link2/arm_r_link2_1/arm_r_link2",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/arm_r_link1/arm_r_link1_1/arm_r_link1",
+    "/World/FFWSH5/Geometry/base_link/arm_base_link/body_arm_assy_1/body_arm_assy",
+    "/World/FFWSH5/Geometry/base_link/left_wheel_steer_link/left_wheel_drive_link/cylinder",
+    "/World/FFWSH5/Geometry/base_link/left_wheel_steer_link/left_wheel_steer_link_1/left_wheel_steer_link",
+    "/World/FFWSH5/Geometry/base_link/right_wheel_steer_link/right_wheel_drive_link/cylinder",
+    "/World/FFWSH5/Geometry/base_link/right_wheel_steer_link/right_wheel_steer_link_1/right_wheel_steer_link",
+    "/World/FFWSH5/Geometry/base_link/rear_wheel_steer_link/rear_wheel_drive_link/cylinder",
+    "/World/FFWSH5/Geometry/base_link/rear_wheel_steer_link/rear_wheel_steer_link_1/rear_wheel_steer_link",
+    "/World/FFWSH5/Geometry/base_link/base_mobile_assy_1/base_mobile_assy",
+    "/World/FFWSH5/Geometry/base_link/lift_link_1/lift_link"
+  ],
+  "contact_filter_prim_paths": [
+    "/World/Room/Floor",
+    "/World/Room/RearWall",
+    "/World/Room/LeftWall",
+    "/World/Conveyor/Belt",
+    "/World/Conveyor/LowerBelt",
+    "/World/Conveyor/FrameFront",
+    "/World/Conveyor/FrameBack",
+    "/World/Conveyor/EndRoller0",
+    "/World/Conveyor/RollerCap0",
+    "/World/Conveyor/EndRoller1",
+    "/World/Conveyor/RollerCap1",
+    "/World/Conveyor/Leg0_0",
+    "/World/Conveyor/Foot0_0",
+    "/World/Conveyor/Leg0_1",
+    "/World/Conveyor/Foot0_1",
+    "/World/Conveyor/CrossBrace0",
+    "/World/Conveyor/Leg1_0",
+    "/World/Conveyor/Foot1_0",
+    "/World/Conveyor/Leg1_1",
+    "/World/Conveyor/Foot1_1",
+    "/World/Conveyor/CrossBrace1",
+    "/World/Conveyor/Leg2_0",
+    "/World/Conveyor/Foot2_0",
+    "/World/Conveyor/Leg2_1",
+    "/World/Conveyor/Foot2_1",
+    "/World/Conveyor/CrossBrace2",
+    "/World/Conveyor/LowerRail0",
+    "/World/Conveyor/LowerRail1",
+    "/World/Conveyor/DriveHousing",
+    "/World/Conveyor/ControlPanel",
+    "/World/Conveyor/StopButton",
+    "/World/ConveyorBaskets/Basket_01/HX5BasketColliders/Floor",
+    "/World/ConveyorBaskets/Basket_01/HX5BasketColliders/WallX0",
+    "/World/ConveyorBaskets/Basket_01/HX5BasketColliders/WallX2",
+    "/World/ConveyorBaskets/Basket_01/HX5BasketColliders/WallY0",
+    "/World/ConveyorBaskets/Basket_01/HX5BasketColliders/WallY2",
+    "/World/ConveyorBaskets/Basket_02/HX5BasketColliders/Floor",
+    "/World/ConveyorBaskets/Basket_02/HX5BasketColliders/WallX0",
+    "/World/ConveyorBaskets/Basket_02/HX5BasketColliders/WallX2",
+    "/World/ConveyorBaskets/Basket_02/HX5BasketColliders/WallY0",
+    "/World/ConveyorBaskets/Basket_02/HX5BasketColliders/WallY2",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_001/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_002/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_003/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_004/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_005/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_006/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_007/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_008/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_009/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_010/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_011/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_012/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_013/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_014/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_015/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_016/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_017/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_018/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_019/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_020/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_021/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_022/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_023/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_024/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_025/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_026/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_027/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_028/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_029/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_030/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_031/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_032/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_033/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_034/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_035/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_036/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_037/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_038/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_039/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/Contents/object1_040/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_03/HX5BasketColliders/Floor",
+    "/World/ConveyorBaskets/Basket_03/HX5BasketColliders/WallX0",
+    "/World/ConveyorBaskets/Basket_03/HX5BasketColliders/WallX2",
+    "/World/ConveyorBaskets/Basket_03/HX5BasketColliders/WallY0",
+    "/World/ConveyorBaskets/Basket_03/HX5BasketColliders/WallY2",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_001/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_002/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_003/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_004/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_005/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_006/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_007/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_008/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_009/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_010/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_011/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_012/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_013/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_014/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_015/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_016/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_017/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_018/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_019/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_020/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_021/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_022/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_023/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_024/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_025/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_026/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_027/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_028/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_029/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_030/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_031/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/Contents/object2_032/Scan/Calibration/Align/Orient/Scan/Geometry/Mesh",
+    "/World/ConveyorBaskets/Basket_04/HX5BasketColliders/Floor",
+    "/World/ConveyorBaskets/Basket_04/HX5BasketColliders/WallX0",
+    "/World/ConveyorBaskets/Basket_04/HX5BasketColliders/WallX2",
+    "/World/ConveyorBaskets/Basket_04/HX5BasketColliders/WallY0",
+    "/World/ConveyorBaskets/Basket_04/HX5BasketColliders/WallY2",
+    "/World/StorageDeck/Post00",
+    "/World/StorageDeck/Foot00",
+    "/World/StorageDeck/Post01",
+    "/World/StorageDeck/Foot01",
+    "/World/StorageDeck/Post10",
+    "/World/StorageDeck/Foot10",
+    "/World/StorageDeck/Post11",
+    "/World/StorageDeck/Foot11",
+    "/World/StorageDeck/Shelf0/Surface",
+    "/World/StorageDeck/Shelf0/Beam0",
+    "/World/StorageDeck/Shelf0/Beam2",
+    "/World/StorageDeck/Shelf0/Basket_01/HX5BasketColliders/Floor",
+    "/World/StorageDeck/Shelf0/Basket_01/HX5BasketColliders/WallX0",
+    "/World/StorageDeck/Shelf0/Basket_01/HX5BasketColliders/WallX2",
+    "/World/StorageDeck/Shelf0/Basket_01/HX5BasketColliders/WallY0",
+    "/World/StorageDeck/Shelf0/Basket_01/HX5BasketColliders/WallY2",
+    "/World/StorageDeck/Shelf0/Basket_02/HX5BasketColliders/Floor",
+    "/World/StorageDeck/Shelf0/Basket_02/HX5BasketColliders/WallX0",
+    "/World/StorageDeck/Shelf0/Basket_02/HX5BasketColliders/WallX2",
+    "/World/StorageDeck/Shelf0/Basket_02/HX5BasketColliders/WallY0",
+    "/World/StorageDeck/Shelf0/Basket_02/HX5BasketColliders/WallY2",
+    "/World/StorageDeck/Shelf0/Basket_03/HX5BasketColliders/Floor",
+    "/World/StorageDeck/Shelf0/Basket_03/HX5BasketColliders/WallX0",
+    "/World/StorageDeck/Shelf0/Basket_03/HX5BasketColliders/WallX2",
+    "/World/StorageDeck/Shelf0/Basket_03/HX5BasketColliders/WallY0",
+    "/World/StorageDeck/Shelf0/Basket_03/HX5BasketColliders/WallY2",
+    "/World/StorageDeck/Shelf0/Basket_04/HX5BasketColliders/Floor",
+    "/World/StorageDeck/Shelf0/Basket_04/HX5BasketColliders/WallX0",
+    "/World/StorageDeck/Shelf0/Basket_04/HX5BasketColliders/WallX2",
+    "/World/StorageDeck/Shelf0/Basket_04/HX5BasketColliders/WallY0",
+    "/World/StorageDeck/Shelf0/Basket_04/HX5BasketColliders/WallY2",
+    "/World/StorageDeck/Shelf1/Surface",
+    "/World/StorageDeck/Shelf1/Beam0",
+    "/World/StorageDeck/Shelf1/Beam2",
+    "/World/StorageDeck/Shelf1/Basket_01/HX5BasketColliders/Floor",
+    "/World/StorageDeck/Shelf1/Basket_01/HX5BasketColliders/WallX0",
+    "/World/StorageDeck/Shelf1/Basket_01/HX5BasketColliders/WallX2",
+    "/World/StorageDeck/Shelf1/Basket_01/HX5BasketColliders/WallY0",
+    "/World/StorageDeck/Shelf1/Basket_01/HX5BasketColliders/WallY2",
+    "/World/StorageDeck/Shelf1/Basket_02/HX5BasketColliders/Floor",
+    "/World/StorageDeck/Shelf1/Basket_02/HX5BasketColliders/WallX0",
+    "/World/StorageDeck/Shelf1/Basket_02/HX5BasketColliders/WallX2",
+    "/World/StorageDeck/Shelf1/Basket_02/HX5BasketColliders/WallY0",
+    "/World/StorageDeck/Shelf1/Basket_02/HX5BasketColliders/WallY2",
+    "/World/StorageDeck/Shelf1/Basket_03/HX5BasketColliders/Floor",
+    "/World/StorageDeck/Shelf1/Basket_03/HX5BasketColliders/WallX0",
+    "/World/StorageDeck/Shelf1/Basket_03/HX5BasketColliders/WallX2",
+    "/World/StorageDeck/Shelf1/Basket_03/HX5BasketColliders/WallY0",
+    "/World/StorageDeck/Shelf1/Basket_03/HX5BasketColliders/WallY2",
+    "/World/StorageDeck/Shelf1/Basket_04/HX5BasketColliders/Floor",
+    "/World/StorageDeck/Shelf1/Basket_04/HX5BasketColliders/WallX0",
+    "/World/StorageDeck/Shelf1/Basket_04/HX5BasketColliders/WallX2",
+    "/World/StorageDeck/Shelf1/Basket_04/HX5BasketColliders/WallY0",
+    "/World/StorageDeck/Shelf1/Basket_04/HX5BasketColliders/WallY2",
+    "/World/StorageDeck/BackStop",
+    "/World/StorageDeck/BackTopRail",
+    "/World/StorageDeck/BackUpright0",
+    "/World/StorageDeck/BackUpright1",
+    "/World/StorageDeck/BackUpright2"
+  ],
+  "initial_positions": {
+    "arm_l_joint1": 1.570717692375183,
+    "arm_l_joint2": 2.908846909122076e-05,
+    "arm_l_joint3": -6.946986104594544e-05,
+    "arm_l_joint4": -2.7989730834960938,
+    "arm_l_joint5": -0.001534760114736855,
+    "arm_l_joint6": 0.0009957302827388048,
+    "arm_l_joint7": 0.0003286788414698094,
+    "arm_r_joint1": 1.5701746940612793,
+    "arm_r_joint2": -7.975521043590561e-07,
+    "arm_r_joint3": 0.00012524037447292358,
+    "arm_r_joint4": -2.7984046936035156,
+    "arm_r_joint5": 0.0015253612073138356,
+    "arm_r_joint6": 0.0009513521217741072,
+    "arm_r_joint7": -0.00016239192336797714,
+    "finger_l_joint1": -0.2739865481853485,
+    "finger_l_joint2": 1.499009132385254,
+    "finger_l_joint3": -0.45504194498062134,
+    "finger_l_joint4": -0.09212926775217056,
+    "finger_l_joint5": -0.061905086040496826,
+    "finger_l_joint6": 0.4969733953475952,
+    "finger_l_joint7": 0.26017943024635315,
+    "finger_l_joint8": 0.3186437487602234,
+    "finger_l_joint9": -0.020414743572473526,
+    "finger_l_joint10": 0.5433523058891296,
+    "finger_l_joint11": 0.2529889643192291,
+    "finger_l_joint12": 0.2815844714641571,
+    "finger_l_joint13": 0.021187027916312218,
+    "finger_l_joint14": 0.503585159778595,
+    "finger_l_joint15": 0.26485997438430786,
+    "finger_l_joint16": 0.3068687617778778,
+    "finger_l_joint17": 0.06268630176782608,
+    "finger_l_joint18": 0.406111478805542,
+    "finger_l_joint19": 0.2525913119316101,
+    "finger_l_joint20": 0.36337560415267944,
+    "finger_r_joint1": 0.143804132938385,
+    "finger_r_joint2": -1.4992872476577759,
+    "finger_r_joint3": 0.20529255270957947,
+    "finger_r_joint4": 0.04186459630727768,
+    "finger_r_joint5": 0.03197697177529335,
+    "finger_r_joint6": 0.2348945587873459,
+    "finger_r_joint7": 0.12105076760053635,
+    "finger_r_joint8": 0.15202131867408752,
+    "finger_r_joint9": 0.010437247343361378,
+    "finger_r_joint10": 0.25593671202659607,
+    "finger_r_joint11": 0.1164238452911377,
+    "finger_r_joint12": 0.1303328275680542,
+    "finger_r_joint13": -0.010982289910316467,
+    "finger_r_joint14": 0.23541465401649475,
+    "finger_r_joint15": 0.12362294644117355,
+    "finger_r_joint16": 0.14288507401943207,
+    "finger_r_joint17": -0.03260428085923195,
+    "finger_r_joint18": 0.1904648393392563,
+    "finger_r_joint19": 0.11697522550821304,
+    "finger_r_joint20": 0.1724877506494522,
+    "head_joint1": 0.6863727569580078,
+    "head_joint2": 1.1809413990704343e-05,
+    "lift_joint": -0.005598837044090033
+  },
+  "initial_pose_metadata": {
+    "source": "Isaac measured /joint_states and /odom snapshot",
+    "ros_domain_id": 115,
+    "joint_stamp": 718.875037492,
+    "odom_stamp": 718.866704158,
+    "odometry_origin_spawn": [
+      0.36,
+      -1.25,
+      0.0,
+      90.0
+    ],
+    "world_position_m": [
+      0.3602113127708435,
+      -0.7280516624450684,
+      1.4901161193847656e-07
+    ],
+    "world_orientation_wxyz": [
+      0.7067136986203583,
+      7.26431508450977e-08,
+      4.656612233660109e-08,
+      0.7074996453584452
+    ],
+    "world_yaw_degrees": 90.06368406375174,
+    "description": "User-requested current pose; Isaac only. Hardware URDF limits checked."
+  },
+  "assumptions": [
+    "Payload masses are user cell settling assumptions (0.08/0.05 kg).",
+    "Drive gains and friction are simulation tuning values.",
+    "Self collision is disabled; environment and payload collisions remain active.",
+    "A 3x3 synthetic taxel projection requires explicit simulation calibration."
+  ],
+  "source_unchanged": true
+}

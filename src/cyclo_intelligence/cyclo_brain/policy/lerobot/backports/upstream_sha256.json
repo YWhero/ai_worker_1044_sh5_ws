@@ -1,0 +1,14 @@
+{
+  "fastwam/README.md": "7f53630119fed88f25541827b98f267f4cba43af1bc1224076936b81f9ed9017",
+  "fastwam/__init__.py": "d27feeba8d4e491e0610511e4bbfdb5fb997f5ce44e99eb328ef4d9fa9a57e5e",
+  "fastwam/configuration_fastwam.py": "3379c1d6a64df842d9607b30e0b4bb34538828bdde00b4bbed1ef6e61e91ec9f",
+  "fastwam/modeling_fastwam.py": "d6166071e47f4b2cc2547fd930ded282755d43c4f80000e66abf2b18d490d532",
+  "fastwam/processor_fastwam.py": "7d30591d5a29c227815479aa321e9f8bfaafae8bf85e2f0f12cdb9604a7c05e8",
+  "fastwam/wan/README.md": "3e2f4349d0fd70277cc452d6fdeeb66425ed8538bd78c0629168bab6225d9d50",
+  "fastwam/wan/__init__.py": "c6784d4796877bb54affcac618d2edae3a5eccd00fdf3c924515d28e760bf3eb",
+  "fastwam/wan/adapters.py": "989604e1734a34e46a8905dd243b21de95ec7fb2d323d80b3437a1c41cc63ca8",
+  "fastwam/wan/components.py": "42c49cddf1848993e6defa9a7c6a7fe8f57f520ba1fc520dd3568c93c99adc2a",
+  "fastwam/wan/model.py": "17df8b01f5e35ff8ab8445b44c823ee03a6daea4d90285be8b0c5dc9a022c64d",
+  "fastwam/wan/modular.py": "fa08022a8bce0a858ee60b55fe45f31fb6fb9abb9f9ada927840a4bd4a7effa6",
+  "fastwam/wan/video_dit.py": "b03651ad411e23a2fcb1451f6e93ab6d01e9812d508c8bbb22aef7aa575a28bb"
+}

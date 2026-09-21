@@ -1,0 +1,34 @@
+# LeRobot timing and action guards from the 1044 hand-act profile.
+# Source: src/cyclo_intelligence/docker/docker-compose.hand-act.yml
+services:
+  lerobot:
+    environment:
+      CYCLO_LEROBOT_RUNTIME_PROFILE: hand-act
+      INFERENCE_HZ: '30'
+      CONTROL_HZ: '100'
+      TARGET_CHUNK_SIZE: none
+      POSTPROCESS_ACTIONS: 'true'
+      ACTION_ALIGNMENT_MODE: l2
+      CHUNK_ALIGN_WINDOW_S: '0.3'
+      REFILL_MARGIN_S: '1.0'
+      ORDERED_ASYNC_REFILL_MARGIN_S: '0.03'
+      REFILL_LATENCY_WARMUP_SAMPLES: '1'
+      REFILL_LATENCY_SAMPLE_MAX_S: '2.0'
+      GET_ACTION_TIMEOUT_S: '10.0'
+      REAL_ACTION_SAFETY_REQUIRED: 'true'
+      REAL_ACTION_SAFETY_ENABLED: 'true'
+      REAL_FIRST_ACTION_MAX_DELTA_RAD: '0.03'
+      REAL_FIRST_ACTION_MAX_DELTA_BY_KEY: arm_left=0.03,arm_right=0.03,hand_left=0.10,hand_right=0.10
+      REAL_TRACKING_MAX_DELTA_BY_KEY: arm_left=0.06,arm_right=0.06,hand_left=1.20,hand_right=0.70
+      REAL_TRACKING_BRIDGE_MAX_TOTAL_DELTA_BY_KEY: arm_left=0.30,arm_right=0.61
+      REAL_WARM_START_ENABLED: 'true'
+      REAL_WARM_START_MAX_TOTAL_DELTA_BY_KEY: arm_left=0.55,arm_right=0.61,hand_left=1.55,hand_right=0.70
+      REAL_RESUME_WARM_START_MAX_TOTAL_DELTA_BY_KEY: arm_left=0.55,arm_right=0.61,hand_left=1.55,hand_right=0.70
+      REAL_SOURCE_STEP_MAX_DELTA_RAD: '0.03'
+      REAL_SOURCE_STEP_BRIDGE_ENABLED: 'true'
+      REAL_SOURCE_STEP_BRIDGE_MAX_RAW_DELTA_BY_KEY: arm_left=0.09,arm_right=0.12,hand_left=0.30,hand_right=0.28
+      REAL_JOINT_LIMIT_MODE: clamp
+      REAL_JOINT_LIMIT_TOLERANCE_RAD: '0.02'
+      REAL_JOINT_LIMIT_TOLERANCE_BY_JOINT: arm_l_joint2=0.18,arm_r_joint2=0.26,finger_l_joint6=0.05,finger_l_joint10=0.04,finger_l_joint14=0.04,finger_l_joint18=0.04
+      REAL_STATE_MAX_AGE_S: '0.5'
+      REAL_START_DEADLINE_S: '15.0'

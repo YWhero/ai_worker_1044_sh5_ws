@@ -1,0 +1,99 @@
+metadata:
+  model_repo: Dongkkka/Task000519_PourWater_ViTacFormer_H100_LR1e4_B512_Hand_Intern
+  revision: b4f21caa4e6a7a05814958b63d5ced46a9374321
+  source_commit: d94788272b5f5e18a80bf62e3e5d51e7d2581d77
+  provenance: Independent CPU prediction from currently received simulation sensor
+    frames; not the unrecorded historical initial_sync target.
+  historical_initial_sync_exact_target_available: false
+  input_dependent: true
+  hashes:
+    train_config.json: 1706377f2b5176bb8a8e9dc4677078fb69bd90dc57e12f04d9b6fccf5517ed77
+    inference_config.json: 899f6bbf2c1fc8949f34275d3abeaef2925ac356b1f19b44c3a8cc0c0a8a576d
+    normalization_stats.pt: a15e0b8f4b0d6a4db04e559674093af11a3101a7f202f9724a36e42d6cd3c262
+    checkpoints/best_validation.pt: 12ec5d2dc898913875189bf282406e2c60b5e631ca6b24ae40636c17340d959c
+  captured_wall_s: 1789700628.2682934
+  sensor_batch_sha256:
+    observation.images.rgb.cam_left_head:
+      shape:
+      - 1
+      - 3
+      - 188
+      - 336
+      sha256: d5ba5cfe0aa43eb7ccb659510490a68dbddd5c77a71c45c0b44952ad8af58e48
+    observation.state:
+      shape:
+      - 1
+      - 6
+      - 54
+      sha256: e446ec18b40b46cc3a393c7d8d307b5a7e61c6236702b1853d6e62cc11532b87
+    observation.tactile.vitacformer:
+      shape:
+      - 1
+      - 18
+      - 180
+      sha256: 3743c2d2a2587707fb5829cfd02ee157fb2d5e6ace79d4f978a4ce4a7bc0a6cf
+  description: Frozen clean-navigation-scene ViTacFormer first action; pitch at physical
+    down limit, yaw centered, lift at physical upper limit. Policy hand targets depend
+    on observed inputs.
+  reference_scene: Official navigation pose at spawn, open hands, head [0, 0], lift
+    0; sensors read without command publishers.
+  reference_receipt: simulation/cyclo/pose_references/vitacformer_task519_sync_20260918.json
+  reference_inputs: simulation/cyclo/pose_references/vitacformer_task519_sync_20260918.inputs.pt
+initial_positions:
+  arm_l_joint1: 1.5700000524520874
+  arm_l_joint2: 9.999999747378752e-06
+  arm_l_joint3: -1.7341464635806103e-12
+  arm_l_joint4: -2.799999952316284
+  arm_l_joint5: 6.598224570886213e-12
+  arm_l_joint6: 3.471989362680006e-11
+  arm_l_joint7: 5.369665215942954e-13
+  arm_r_joint1: 1.5700000524520874
+  arm_r_joint2: -9.999999747378752e-06
+  arm_r_joint3: 1.7055673279947614e-12
+  arm_r_joint4: -2.799999952316284
+  arm_r_joint5: -6.475246554227265e-12
+  arm_r_joint6: 3.473177995205745e-11
+  arm_r_joint7: -5.512194975638984e-13
+  finger_l_joint1: -0.2672673463821411
+  finger_l_joint2: 1.5
+  finger_l_joint3: -0.45431625843048096
+  finger_l_joint4: -0.09140825271606445
+  finger_l_joint5: -0.06267940998077393
+  finger_l_joint6: 0.49824362993240356
+  finger_l_joint7: 0.26118719577789307
+  finger_l_joint8: 0.31862056255340576
+  finger_l_joint9: -0.0209500789642334
+  finger_l_joint10: 0.5446126461029053
+  finger_l_joint11: 0.2539355754852295
+  finger_l_joint12: 0.2815605401992798
+  finger_l_joint13: 0.020936906337738037
+  finger_l_joint14: 0.5047348737716675
+  finger_l_joint15: 0.26565390825271606
+  finger_l_joint16: 0.3068537712097168
+  finger_l_joint17: 0.06268888711929321
+  finger_l_joint18: 0.40707212686538696
+  finger_l_joint19: 0.25316935777664185
+  finger_l_joint20: 0.3633843958377838
+  finger_r_joint1: 0.13928472995758057
+  finger_r_joint2: -1.5
+  finger_r_joint3: 0.2044961154460907
+  finger_r_joint4: 0.04131874442100525
+  finger_r_joint5: 0.03260868787765503
+  finger_r_joint6: 0.2355412244796753
+  finger_r_joint7: 0.12158586084842682
+  finger_r_joint8: 0.15199607610702515
+  finger_r_joint9: 0.010861635208129883
+  finger_r_joint10: 0.25659310817718506
+  finger_r_joint11: 0.11695277690887451
+  finger_r_joint12: 0.13031858205795288
+  finger_r_joint13: -0.01078653335571289
+  finger_r_joint14: 0.23604339361190796
+  finger_r_joint15: 0.12409800291061401
+  finger_r_joint16: 0.14287713170051575
+  finger_r_joint17: -0.032614946365356445
+  finger_r_joint18: 0.1910119354724884
+  finger_r_joint19: 0.11735358834266663
+  finger_r_joint20: 0.17248296737670898
+  head_joint1: 0.6951
+  head_joint2: 0.0
+  lift_joint: 0.0

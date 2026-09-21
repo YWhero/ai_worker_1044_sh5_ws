@@ -1,0 +1,25 @@
+{
+  "architecture_version": "vitacformer_sh5_pour_h100_v2",
+  "training_recipe_version": "task519_folder159_gt75_residual_unpenalized_r1",
+  "model_config": {
+    "architecture": "ViTacFormer cross-attention + future tactile prediction + bounded SH5 decoder",
+    "architecture_version": "vitacformer_sh5_pour_h100_v2",
+    "source_repo_commit": "d94788272b5f5e18a80bf62e3e5d51e7d2581d77",
+    "state_dim": 54,
+    "state_history": 6,
+    "tactile_dim": 180,
+    "tactile_history": 18,
+    "action_dim": 54,
+    "action_chunk": 100,
+    "camera_names": [
+      "observation.images.rgb.cam_left_head"
+    ],
+    "hidden_dim": 512,
+    "dim_feedforward": 3200,
+    "enc_layers": 4,
+    "dec_layers": 7,
+    "nheads": 8,
+    "backbone": "resnet18",
+    "action_bound_beta": 1000.0
+  }
+}

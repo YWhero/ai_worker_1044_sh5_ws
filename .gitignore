@@ -1,0 +1,53 @@
+# ROS 2 / colcon outputs
+build/
+install/
+log/
+
+# Python / test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+
+# Node
+node_modules/
+
+# Runtime state and caches
+simulation/agent_sockets/
+simulation/*/agent_sockets/
+simulation/isaac/runtime/
+simulation/*/cyclo/diagnostics/
+simulation/*/cyclo/rosbag2/
+simulation/*/cyclo/zenoh_cache/
+simulation/*/cyclo/huggingface/
+simulation/*/cyclo/model/
+simulation/isaac/cyclo/conversion-probes/
+
+# Local model and recording artifacts
+*.mcap
+*.bag
+*.bag.active
+*.bag.orig.active
+*.safetensors
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Editors and OS files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo

@@ -1,0 +1,109 @@
+name: cyclo_1044_hx5_isaac
+services:
+  ai_worker:
+    image: cyclo-1044-sh5/ai-worker-hx5-sim:local-amd64
+    build:
+      context: ../..
+      dockerfile: runtime/hx5_sim/Dockerfile
+      network: host
+    container_name: ai_worker_1044_hx5_isaac
+    network_mode: host
+    ipc: private
+    shm_size: 2gb
+    runtime: nvidia
+    environment: &ros_environment
+      ROS_DOMAIN_ID: '115'
+      RMW_IMPLEMENTATION: rmw_zenoh_cpp
+      ZENOH_CONFIG_OVERRIDE: 'mode="client";connect/endpoints=["tcp/127.0.0.1:7855"];scouting/multicast/enabled=false;transport/shared_memory/enabled=false'
+      GZ_PARTITION: ai_worker_1044_hx5_isaac
+      DISPLAY: ${DISPLAY:-:1}
+      QT_X11_NO_MITSHM: '1'
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: all
+    volumes:
+      - ../../src/ai_worker:/root/ros2_ws/src/ai_worker:ro
+      - ../../simulation/isaac/ai_worker/maps:/root/ros2_ws/src/ai_worker/ffw_navigation/maps
+      - ../../src/robotis_hand/robotis_hand_description:/root/ros2_ws/src/robotis_hand/robotis_hand_description:ro
+      - ../../src/hx5_simulation:/root/ros2_ws/src/hx5_simulation:ro
+      - ../../src/hx5_contact_system:/root/ros2_ws/src/hx5_contact_system:ro
+      - ../../simulation/isaac/ai_worker:/workspace
+      - ./router_run:/etc/s6-overlay/s6-rc.d/hx5_zenoh_router/run:ro
+      - ../../src/hx5_isaac:/hx5_isaac:ro
+      - ../../runtime/hx5_isaac:/hx5_isaac_runtime:ro
+      - ../../simulation/isaac/assets/sh5:/isaac_assets:ro
+      - ./sidecar_run:/etc/s6-overlay/s6-rc.d/hx5_isaac_sidecar/run:ro
+      - ./sidecar_type:/etc/s6-overlay/s6-rc.d/hx5_isaac_sidecar/type:ro
+      - ./sidecar_member:/etc/s6-overlay/s6-rc.d/user/contents.d/hx5_isaac_sidecar:ro
+      - ../../simulation/isaac/agent_sockets/ai_worker:/var/run/agent
+      - /tmp/.X11-unix:/tmp/.X11-unix:ro
+      - ../hx5_sim/ros_service.sh:/usr/local/lib/s6-services/ros2_service_run.sh:ro
+    restart: 'no'
+  cyclo:
+    image: cyclo-1044-sh5/main:hx5-sim-amd64
+    build:
+      context: ../..
+      dockerfile: runtime/hx5_sim/Dockerfile.cyclo
+      network: host
+    container_name: cyclo_intelligence_1044_hx5_isaac
+    network_mode: host
+    ipc: private
+    shm_size: 2gb
+    environment:
+      <<: *ros_environment
+      CYCLO_UI_PORT: '7880'
+      CYCLO_ROSBRIDGE_PORT: '7890'
+      CYCLO_ROSBRIDGE_PATH: '/rosbridge/'
+      CYCLO_VIDEO_SERVER_PORT: '7882'
+      CYCLO_WEB_VIDEO_SERVER_PORT: '7885'
+      CYCLO_CAMERA_PREVIEW_PORT: '7886'
+      CYCLO_CAMERA_PREVIEW_MAX_WIDTH: '1280'
+      CYCLO_CAMERA_PREVIEW_JPEG_QUALITY: '95'
+      CYCLO_CAMERA_PREVIEW_FPS: '12.0'
+      CYCLO_SUPERVISOR_API_PORT: '7900'
+      CYCLO_SUPERVISOR_API_CONTAINER_NAME: cyclo_intelligence_1044_hx5_isaac
+      CYCLO_COMPOSE_PROJECT_NAME: cyclo_1044_hx5_isaac
+      CYCLO_MAIN_CONTAINER_NAME: cyclo_intelligence_1044_hx5_isaac
+      CYCLO_NAVIGATION_CONTAINER: ai_worker_1044_hx5_isaac
+      CYCLO_NAVIGATION_USE_SIM_TIME: 'true'
+      CYCLO_USE_SIM_TIME: 'true'
+      CYCLO_ROS_TRANSPORT_OVERLAY: 'true'
+      HX5_ISAAC_ROOT: ${HX5_ISAAC_ROOT:?Use runtime/hx5_isaac.sh to set the workspace path}
+      CYCLO_SUPERVISOR_API_COMPOSE_FILE: /hx5_isaac_runtime/policies.yaml
+      CYCLO_POLICY_BASE_COMPOSE: /root/ros2_ws/src/cyclo_intelligence/docker/docker-compose.yml
+      CYCLO_LEROBOT_IMAGE: cyclo-1044-sh5/lerobot:sh5-c8ce413-amd64
+      CYCLO_VITACFORMER_IMAGE: cyclo-1044-sh5/model-vitacformer:hx5-sim-amd64
+      CYCLO_GROOT_IMAGE: cyclo-1044-sh5/groot:local-amd64
+      CYCLO_LEROBOT_RUNTIME_PROFILE: hand-act
+      ARCH: amd64
+      CYCLO_EPISODE_SCHEMA_VERSION: cyclo_isaac_mcap
+      CYCLO_SIM_TACTILE_SOURCE: physx_contact_force_projected_grid_v1
+      CYCLO_NAVIGATION_DATA_DIR: /workspace/navigation
+      CYCLO_BT_TREES_DIR: /workspace/bt/trees
+      CYCLO_BT_POSE_PRESETS_DIR: /workspace/bt/pose_presets
+      LEROBOT_CONTAINER_NAME: lerobot_server_1044_hx5_isaac
+      VITACFORMER_CONTAINER_NAME: vitacformer_server_1044_hx5_isaac
+      GROOT_CONTAINER_NAME: groot_server_1044_hx5_isaac
+    volumes:
+      - ./orchestrator_run:/etc/s6-overlay/s6-rc.d/orchestrator/run:ro
+      - ../../simulation/isaac/ui:/usr/share/nginx/html
+      - ./cyclo_data_run:/etc/s6-overlay/s6-rc.d/cyclo_data/run:ro
+      - ../../runtime/hx5_isaac:/hx5_isaac_runtime:ro
+      - ../../simulation/isaac/cyclo:/workspace
+      - ../../simulation/cyclo/model:/workspace/model:ro
+      - ../../simulation/isaac/agent_sockets/cyclo:/var/run/agent
+      - ../../src/cyclo_intelligence:/root/ros2_ws/src/cyclo_intelligence
+      - ../../src/cyclo_intelligence/shared/shared/robot_configs:/orchestrator_config:ro
+      - ../hx5_sim/robot_configs/ffw_sh5_rev1_config.yaml:/orchestrator_config/ffw_sh5_rev1_config.yaml:ro
+      - ../hx5_sim/robot_configs/ffw_sh5_rev1_config.yaml:/root/ros2_ws/src/cyclo_intelligence/shared/shared/robot_configs/ffw_sh5_rev1_config.yaml:ro
+      - ../../src/cyclo_intelligence/shared/shared/robot_configs/urdf:/usr/share/nginx/html/urdf/urdf:ro
+      - ../../src/cyclo_intelligence/shared/shared/robot_configs/ffw_description:/usr/share/nginx/html/urdf/ffw_description:ro
+      - ../../src/cyclo_intelligence/shared/shared/robot_configs/open_manipulator_description:/usr/share/nginx/html/urdf/open_manipulator_description:ro
+      - ../../src/cyclo_intelligence/docker/supervisor_api:/opt/supervisor_api:ro
+      - ../hx5_sim/ros_service.sh:/usr/local/lib/s6-services/ros2_service_run.sh:ro
+      - ../hx5_sim/ros_service_finish.sh:/usr/local/lib/s6-services/ros2_service_finish.sh:ro
+      - ../../src/cyclo_intelligence/docker/s6-services/nginx/run:/etc/s6-overlay/s6-rc.d/nginx/run:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./policies.yaml:/hx5_isaac_runtime/policies.yaml:ro
+      - ./docker-compose.hand-act.yml:/hx5_isaac_runtime/docker-compose.hand-act.yml:ro
+      - ../../simulation/isaac/cyclo/huggingface:/root/.cache/huggingface
+    restart: 'no'

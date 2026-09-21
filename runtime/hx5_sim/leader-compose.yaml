@@ -1,0 +1,16 @@
+services:
+  leader:
+    image: cyclo-1044-sh5/ai-worker-hx5-sim:local-amd64
+    container_name: lg2_leader_1044_hx5_sim
+    entrypoint: /bin/bash
+    command: ['-c', 'exec sleep infinity']
+    network_mode: host
+    ipc: private
+    environment:
+      ROS_DOMAIN_ID: '105'
+      RMW_IMPLEMENTATION: rmw_zenoh_cpp
+      ZENOH_CONFIG_OVERRIDE: 'mode="client";connect/endpoints=["tcp/127.0.0.1:7455"];scouting/multicast/enabled=false;transport/shared_memory/enabled=false'
+    devices:
+      - ${HX5_SIM_LEFT_LEADER_DEVICE:-/dev/left_leader}:/dev/left_leader
+      - ${HX5_SIM_RIGHT_LEADER_DEVICE:-/dev/right_leader}:/dev/right_leader
+    restart: 'no'

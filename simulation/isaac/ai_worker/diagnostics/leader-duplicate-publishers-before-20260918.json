@@ -1,0 +1,37 @@
+{
+  "ros_domain_id": 115,
+  "distinct_status_payloads": [
+    {
+      "mapping_profile": null,
+      "preset_names": [
+        "Simulation Open",
+        "Simulation Power Grasp",
+        "Simulation Pinch"
+      ],
+      "messages": 12
+    },
+    {
+      "mapping_profile": {
+        "name": "ROBOTIS 1044 SH5 release/grasp",
+        "source": "https://github.com/ROBOTIS-GIT/ai_worker/blob/a7e047128e730050c6bf21f9b74f6d73139c24bc/ffw_teleop/ffw_teleop/preset_hand_controller.py",
+        "gripper_range": [
+          -0.1,
+          1.1
+        ]
+      },
+      "preset_names": [
+        "Simulation Open",
+        "Simulation Power Grasp",
+        "Simulation Pinch"
+      ],
+      "messages": 8
+    }
+  ],
+  "counts": {
+    "/leader/hand_preset/status": 5,
+    "/tf_static": 10,
+    "/clock": 1,
+    "/joint_states": 1,
+    "/leader/joint_trajectory_command_broadcaster_left_hand/joint_trajectory": 5
+  }
+}

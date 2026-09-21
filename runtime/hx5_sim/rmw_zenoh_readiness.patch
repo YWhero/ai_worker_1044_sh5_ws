@@ -1,0 +1,53 @@
+--- a/rmw_zenoh_cpp/src/detail/rmw_client_data.hpp
++++ b/rmw_zenoh_cpp/src/detail/rmw_client_data.hpp
+@@ -62,6 +62,8 @@
+   // Get a copy of the TopicInfo of this ClientData.
+   liveliness::TopicInfo topic_info() const;
+ 
++  rmw_ret_t queryable_is_ready(bool * is_ready) const;
++
+   // Returns true if liveliness token is still valid.
+   bool liveliness_is_valid() const;
+ 
+--- a/rmw_zenoh_cpp/src/detail/rmw_client_data.cpp
++++ b/rmw_zenoh_cpp/src/detail/rmw_client_data.cpp
+@@ -334,6 +334,23 @@
+ }
+ 
+ ///=============================================================================
++rmw_ret_t ClientData::queryable_is_ready(bool * is_ready) const
++{
++  std::lock_guard<std::mutex> lock(mutex_);
++  *is_ready = false;
++  if (is_shutdown()) {
++    return RMW_RET_OK;
++  }
++  zenoh::ZResult result;
++  const auto status = querier_.get_matching_status(&result);
++  if (result != Z_OK) {
++    RMW_SET_ERROR_MSG("Unable to get service querier matching status");
++    return RMW_RET_ERROR;
++  }
++  *is_ready = status.matching;
++  return RMW_RET_OK;
++}
++
+ rmw_ret_t ClientData::send_request(
+   const void * ros_request,
+   int64_t * sequence_id)
+--- a/rmw_zenoh_cpp/src/rmw_zenoh.cpp
++++ b/rmw_zenoh_cpp/src/rmw_zenoh.cpp
+@@ -2629,8 +2629,12 @@
+     return RMW_RET_INVALID_ARGUMENT;
+   }
+ 
+-  return node->context->impl->graph_cache()->service_server_is_available(
++  const auto result = node->context->impl->graph_cache()->service_server_is_available(
+     client_data->topic_info(), is_available);
++  if (result != RMW_RET_OK || !*is_available) {
++    return result;
++  }
++  return client_data->queryable_is_ready(is_available);
+ }
+ 
+ //==============================================================================

@@ -1,0 +1,13 @@
+# Read or update the recording camera selection independently of inference.
+string robot_type
+bool apply
+# Used only when apply=true. Empty explicitly disables all camera recording.
+string[] enabled_cameras
+---
+bool success
+string message
+string[] camera_names
+string[] image_topics
+int32[] rotation_degrees
+string[] enabled_cameras
+bool locked

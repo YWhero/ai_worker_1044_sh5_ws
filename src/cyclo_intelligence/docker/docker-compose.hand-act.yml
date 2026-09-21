@@ -1,0 +1,84 @@
+# Vanilla ACT runtime values for the 30 Hz SH5 hand dataset.  Select with
+# CYCLO_LEROBOT_RUNTIME_PROFILE=hand-act; launchers intentionally layer this
+# file last so these values override generic/T-Rex/local Compose defaults.
+services:
+  cyclo_intelligence:
+    environment:
+      CYCLO_LEROBOT_RUNTIME_PROFILE: "hand-act"
+
+  lerobot:
+    environment:
+      # Sentinel used by supervisor_api to recreate a same-image container
+      # when its selected runtime profile changed.
+      CYCLO_LEROBOT_RUNTIME_PROFILE: "hand-act"
+      INFERENCE_HZ: "30"
+      CONTROL_HZ: "100"
+      TARGET_CHUNK_SIZE: "none"
+      POSTPROCESS_ACTIONS: "true"
+      ACTION_ALIGNMENT_MODE: "l2"
+      CHUNK_ALIGN_WINDOW_S: "0.3"
+      # Preserve the original general ACT look-ahead used by ordinary
+      # async/sync modes and captured in the pre-TactileACT SH5 backups.
+      # TactileACT ordered-async uses the separate short near-tail margin
+      # below, so it neither queues one second of stale chunks nor invokes
+      # latency/L2 source-row skipping.
+      REFILL_MARGIN_S: "1.0"
+      # TactileACT executes its saved four-step horizon while decoder tails
+      # contribute only time-aligned overlap estimates at the next replan.
+      # One 30 Hz source period prefetches the next four-action response in
+      # time for continuous 100 Hz publishing without accumulating stale
+      # observation-conditioned chunks.
+      ORDERED_ASYNC_REFILL_MARGIN_S: "0.03"
+      REFILL_LATENCY_WARMUP_SAMPLES: "1"
+      REFILL_LATENCY_SAMPLE_MAX_S: "2.0"
+      GET_ACTION_TIMEOUT_S: "10.0"
+      # Real-only, fail-closed guards. Simulation preview is unchanged.
+      REAL_ACTION_SAFETY_REQUIRED: "true"
+      REAL_ACTION_SAFETY_ENABLED: "true"
+      REAL_FIRST_ACTION_MAX_DELTA_RAD: "0.03"
+      REAL_FIRST_ACTION_MAX_DELTA_BY_KEY: "arm_left=0.03,arm_right=0.03,hand_left=0.10,hand_right=0.10"
+      # Arm lag beyond 0.06 is approached through the bounded bridge below.
+      # Hand encoder/command zero offsets are covered by dataset-audited hard
+      # gates; command-to-command/source steps remain capped at 0.03.
+      REAL_TRACKING_MAX_DELTA_BY_KEY: "arm_left=0.06,arm_right=0.06,hand_left=1.20,hand_right=0.70"
+      # The recorded left-arm maximum is 0.293578 rad. Runtime backpressure
+      # holds the current target while the follower catches up, so the hard
+      # cap remains at the dataset-audited 0.30 rad envelope.
+      REAL_TRACKING_BRIDGE_MAX_TOTAL_DELTA_BY_KEY: "arm_left=0.30,arm_right=0.61"
+      # The inference UI unloads the Simulation policy when Clear is pressed,
+      # so a following Real Deploy is a fresh LOAD+START rather than RESUME.
+      # Both paths use the audited SH5 bringup-pose envelope below. Every
+      # inserted source step still obeys the 0.03 rad gate below.
+      REAL_WARM_START_ENABLED: "true"
+      REAL_WARM_START_MAX_TOTAL_DELTA_BY_KEY: "arm_left=0.55,arm_right=0.61,hand_left=1.55,hand_right=0.70"
+      # Warm-start envelope for the approved SH5 bringup pose. The audited
+      # model/current-state gaps are 0.5064/0.3574/1.4862/0.0406 rad; a shared
+      # 50-step warm bridge keeps every command step <=0.03 rad and the worst
+      # implied joint speed at 2.973 rad/s (< the 4.8 rad/s URDF limit).
+      # Ordinary tracking retains the stricter limits above.
+      REAL_RESUME_WARM_START_MAX_TOTAL_DELTA_BY_KEY: "arm_left=0.55,arm_right=0.61,hand_left=1.55,hand_right=0.70"
+      REAL_SOURCE_STEP_MAX_DELTA_RAD: "0.03"
+      # Raw model steps above 0.03 are subdivided. Per-group hard limits cover
+      # every 30 Hz transition in the 97 recorded ACT episodes plus margin.
+      REAL_SOURCE_STEP_BRIDGE_ENABLED: "true"
+      REAL_SOURCE_STEP_BRIDGE_MAX_RAW_DELTA_BY_KEY: "arm_left=0.09,arm_right=0.12,hand_left=0.30,hand_right=0.28"
+      REAL_JOINT_LIMIT_MODE: "clamp"
+      REAL_JOINT_LIMIT_TOLERANCE_RAD: "0.02"
+      # All 97 recordings commanded these shoulder-pitch joints beyond their
+      # zero boundary while follower state saturated at zero. The tactile ACT
+      # left-hand joint6 training range starts exactly at 0.0 rad; observed
+      # decoder extrapolation reached -0.028154 rad after switching policies.
+      # The full-chunk Async TactileACT run also reached -0.026017 rad on
+      # finger_l_joint14, whose recorded action range is 0.0..1.5 rad. A later
+      # long rollout reached the final cup before one finger_l_joint10 decoder
+      # row extrapolated to -0.024089 rad; that joint has the same recorded
+      # 0.0..1.5-rad action and 0.0..2.0-rad URDF range. A subsequent cycle
+      # produced the same bounded tail on finger_l_joint18 (-0.020227 rad),
+      # whose recorded and URDF ranges are likewise 0.0..1.5 and 0.0..2.0.
+      # Permit only these
+      # narrow negative tails, then clamp every published value back to the
+      # legal 0.0-rad URDF boundary. Values beyond the joint-specific caps and
+      # all other joints still fail closed.
+      REAL_JOINT_LIMIT_TOLERANCE_BY_JOINT: "arm_l_joint2=0.18,arm_r_joint2=0.26,finger_l_joint6=0.05,finger_l_joint10=0.04,finger_l_joint14=0.04,finger_l_joint18=0.04"
+      REAL_STATE_MAX_AGE_S: "0.5"
+      REAL_START_DEADLINE_S: "15.0"
